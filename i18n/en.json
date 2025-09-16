@@ -1,0 +1,120 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "refund": "Refund"
+  },
+  "footer": {
+    "copyright": "© 2025 Ivan Kniazev. All rights reserved.",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "refund": "Refund Policy"
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: January 16, 2025",
+    "section1": {
+      "title": "1. Acceptance of Terms",
+      "content": "By accessing and using this website (ivankniazev.dev) and any related digital products, browser extensions, or subscription services, you agree to comply with and be bound by these Terms of Service. If you do not agree, you must not use our services."
+    },
+    "section2": {
+      "title": "2. Services Provided",
+      "content": "We provide digital products and subscription-based services, including browser extensions and related tools. Features may change, update, or be discontinued at our discretion."
+    },
+    "section3": {
+      "title": "3. Use License",
+      "content": "You are granted a limited, non-exclusive, non-transferable license to use our digital products and services for personal, non-commercial purposes. You may not:",
+      "list1": "Modify, copy, or redistribute the materials.",
+      "list2": "Use the services for commercial purposes without written permission.",
+      "list3": "Attempt to reverse engineer or otherwise exploit the software."
+    },
+    "section4": {
+      "title": "4. Disclaimer",
+      "content": "All materials and services are provided \"as is\" without warranties of any kind. We disclaim all implied warranties, including but not limited to merchantability, fitness for a particular purpose, and non-infringement."
+    },
+    "section5": {
+      "title": "5. Limitations of Liability",
+      "content": "To the maximum extent permitted by law, in no event shall Ivan Kniazev or its suppliers be liable for any damages (including, without limitation, loss of data, revenue, or business interruption) arising out of the use or inability to use our products or services, even if we have been advised of the possibility of such damages."
+    },
+    "section6": {
+      "title": "6. Refunds",
+      "content": "Refunds are governed by our separate Refund Policy."
+    },
+    "section7": {
+      "title": "7. Changes to Terms",
+      "content": "We may update these Terms of Service from time to time. Continued use of our services after changes indicates acceptance of the updated Terms."
+    },
+    "section8": {
+      "title": "8. Contact Information",
+      "content": "For any questions about these Terms of Service, please contact us at contact@ivankniazev.dev."
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: January 16, 2025",
+    "section1": {
+      "title": "1. Information We Collect",
+      "content": "We may collect information you provide directly (e.g., when contacting us by email) and limited technical information related to the use of our services."
+    },
+    "section2": {
+      "title": "2. How We Use Information",
+      "content": "We use collected information to:",
+      "list1": "Provide and maintain our services.",
+      "list2": "Communicate with users about their accounts, purchases, or support requests.",
+      "list3": "Improve and optimize user experience."
+    },
+    "section3": {
+      "title": "3. Information Sharing",
+      "content": "We do not sell, trade, or rent your personal information. Data may be shared only with trusted third-party providers (e.g., Paddle for payment processing) as required to deliver our services."
+    },
+    "section4": {
+      "title": "4. Data Security",
+      "content": "We apply reasonable security measures to protect personal information from unauthorized access, alteration, or disclosure. However, no method of transmission over the Internet is 100% secure."
+    },
+    "section5": {
+      "title": "5. Cookies",
+      "content": "This website may use cookies for analytics and functionality. Users can disable cookies in their browser settings, but some features may not function properly."
+    },
+    "section6": {
+      "title": "6. Changes to This Policy",
+      "content": "We may update this Privacy Policy occasionally. Any updates will be published on this page with a revised \"Last updated\" date."
+    },
+    "section7": {
+      "title": "7. Contact Us",
+      "content": "If you have any questions about this Privacy Policy, please contact us at contact@ivankniazev.dev."
+    }
+  },
+  "refund": {
+    "title": "Refund Policy",
+    "lastUpdated": "Last updated: January 16, 2025",
+    "section1": {
+      "title": "1. Refund Eligibility",
+      "content": "We offer refunds for digital products and subscription services within 30 days of purchase, provided the request complies with our refund criteria. Refunds are not granted if the product has been extensively used or the service has been fully consumed."
+    },
+    "section2": {
+      "title": "2. Refund Process",
+      "content": "To request a refund, please contact us at contact@ivankniazev.dev with your order details (transaction ID, date of purchase) and a brief explanation of the reason for the request."
+    },
+    "section3": {
+      "title": "3. Processing Time",
+      "content": "Approved refunds will be processed within 5–10 business days. The refund will be issued to the original payment method used at the time of purchase."
+    },
+    "section4": {
+      "title": "4. Non-Refundable Items",
+      "content": "Refunds are not available for:",
+      "list1": "Custom development work once completed.",
+      "list2": "Services that have been fully delivered.",
+      "list3": "Digital products that have been downloaded or used beyond the trial/fair use limit."
+    },
+    "section5": {
+      "title": "5. Partial Refunds",
+      "content": "In some cases, partial refunds may be granted for products or services that have been partially used or delivered."
+    },
+    "section6": {
+      "title": "6. Contact Information",
+      "content": "For any questions about this Refund Policy, please contact us at contact@ivankniazev.dev."
+    }
+  }
+}

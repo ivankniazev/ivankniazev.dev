@@ -1,14 +1,33 @@
-// Language switcher functionality
+// Language switcher with JSON translations
 class LanguageSwitcher {
     constructor() {
         this.currentLanguage = this.getStoredLanguage() || 'en';
+        this.translations = {};
         this.init();
     }
 
-    init() {
+    async init() {
+        await this.loadTranslations();
         this.bindEvents();
         this.updateLanguage(this.currentLanguage);
         this.updateActiveButton();
+    }
+
+    async loadTranslations() {
+        try {
+            // Load both language files
+            const [enResponse, ruResponse] = await Promise.all([
+                fetch('i18n/en.json'),
+                fetch('i18n/ru.json')
+            ]);
+
+            this.translations.en = await enResponse.json();
+            this.translations.ru = await ruResponse.json();
+        } catch (error) {
+            console.error('Failed to load translations:', error);
+            // Fallback to empty translations
+            this.translations = { en: {}, ru: {} };
+        }
     }
 
     bindEvents() {
@@ -31,21 +50,19 @@ class LanguageSwitcher {
     }
 
     updateLanguage(language) {
-        const elements = document.querySelectorAll('[data-en][data-ru]');
-
-        elements.forEach(element => {
+        // Handle old data-en/data-ru attributes for backward compatibility
+        const oldElements = document.querySelectorAll('[data-en][data-ru]');
+        oldElements.forEach(element => {
             const enText = element.getAttribute('data-en');
             const ruText = element.getAttribute('data-ru');
 
             if (language === 'ru' && ruText) {
-                // Handle HTML content for legal pages
                 if (ruText.includes('<h2>')) {
                     element.innerHTML = ruText;
                 } else {
                     element.textContent = ruText;
                 }
             } else if (enText) {
-                // Handle HTML content for legal pages
                 if (enText.includes('<h2>')) {
                     element.innerHTML = enText;
                 } else {
@@ -54,8 +71,40 @@ class LanguageSwitcher {
             }
         });
 
+        // Handle new data-lang attributes with JSON translations
+        const newElements = document.querySelectorAll('[data-lang]');
+        newElements.forEach(element => {
+            const key = element.getAttribute('data-lang');
+            const translation = this.getTranslation(language, key);
+
+            if (translation) {
+                element.textContent = translation;
+            }
+        });
+
         // Update document language attribute
         document.documentElement.lang = language;
+    }
+
+    getTranslation(language, key) {
+        if (!this.translations[language]) {
+            return null;
+        }
+
+        // Split key by dots to navigate nested objects
+        // e.g., 'terms.section1.title' becomes ['terms', 'section1', 'title']
+        const keys = key.split('.');
+        let translation = this.translations[language];
+
+        for (const k of keys) {
+            if (translation && typeof translation === 'object' && k in translation) {
+                translation = translation[k];
+            } else {
+                return null;
+            }
+        }
+
+        return typeof translation === 'string' ? translation : null;
     }
 
     updateActiveButton() {
@@ -86,13 +135,13 @@ class LanguageSwitcher {
 }
 
 // Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    new LanguageSwitcher();
+document.addEventListener('DOMContentLoaded', async () => {
+    const switcher = new LanguageSwitcher();
 });
 
 // Initialize immediately if DOM is already loaded
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', async () => {
         new LanguageSwitcher();
     });
 } else {

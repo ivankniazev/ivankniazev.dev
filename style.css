@@ -43,7 +43,7 @@ nav {
 
 .nav-center {
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .nav-center a {
@@ -52,6 +52,7 @@ nav {
     font-weight: 500;
     transition: color 0.2s;
     position: relative;
+    font-size: 0.95rem;
 }
 
 .nav-center a:hover,
