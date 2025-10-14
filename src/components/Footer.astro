@@ -1,0 +1,19 @@
+---
+import { useTranslations, getLocalizedPath, type Lang } from '../utils/i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<footer>
+  <p>{t('footer.copyright')}</p>
+  <div class="footer-links">
+    <a href={getLocalizedPath('/terms', lang)}>{t('footer.terms')}</a>
+    <a href={getLocalizedPath('/privacy', lang)}>{t('footer.privacy')}</a>
+    <a href={getLocalizedPath('/refund', lang)}>{t('footer.refund')}</a>
+  </div>
+</footer>

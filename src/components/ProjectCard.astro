@@ -1,0 +1,32 @@
+---
+import { getLocalizedPath, type Lang } from '../utils/i18n';
+
+interface Props {
+  project: any;
+  lang: Lang;
+}
+
+const { project, lang } = Astro.props;
+---
+
+<div class="project-card">
+  <div class="project-image">
+    <div class="project-placeholder">{project.icon}</div>
+  </div>
+  <div class="project-content">
+    <h3>{project.title[lang]}</h3>
+    <p class="project-description">
+      {project.shortDescription[lang]}
+    </p>
+    <div class="project-tech">
+      {project.tech.map((tech: string) => (
+        <span class="tech-tag">{tech}</span>
+      ))}
+    </div>
+    <div class="project-links">
+      <a href={getLocalizedPath(`/projects/${project.slug}`, lang)} class="btn primary">
+        {lang === 'en' ? 'Learn More' : 'Подробнее'}
+      </a>
+    </div>
+  </div>
+</div>

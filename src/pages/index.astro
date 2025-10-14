@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const lang = 'en';
+const title = 'Ivan Kniazev - Developer';
+---
+
+<Layout title={title} lang={lang}>
+  <section class="hero">
+    <h1>Ivan Kniazev</h1>
+    <p class="subtitle">Software Developer & Problem Solver</p>
+    <p class="description">
+      Passionate about creating efficient solutions and building tools that make a difference.
+      Focused on web development, browser extensions, and user experience.
+    </p>
+    <div class="cta-buttons">
+      <a href="/projects" class="btn primary">View Projects</a>
+      <a href="mailto:contact@ivankniazev.dev" class="btn secondary">Contact Me</a>
+    </div>
+  </section>
+
+  <section class="skills">
+    <h2>Skills & Technologies</h2>
+    <div class="skills-grid">
+      <div class="skill-item">JavaScript</div>
+      <div class="skill-item">TypeScript</div>
+      <div class="skill-item">React</div>
+      <div class="skill-item">Node.js</div>
+      <div class="skill-item">HTML/CSS</div>
+      <div class="skill-item">Browser Extensions</div>
+      <div class="skill-item">Git</div>
+      <div class="skill-item">Web APIs</div>
+    </div>
+  </section>
+</Layout>

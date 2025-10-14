@@ -1,0 +1,23 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import projectsData from '../../data/projects.json';
+
+const lang = 'en';
+const title = 'Projects - Ivan Kniazev';
+---
+
+<Layout title={title} lang={lang}>
+  <section class="page-header">
+    <h1>My Projects</h1>
+    <p>
+      A collection of tools and applications I've built to solve real-world problems.
+    </p>
+  </section>
+
+  <section class="projects-grid">
+    {projectsData.map((project) => (
+      <ProjectCard project={project} lang={lang} />
+    ))}
+  </section>
+</Layout>

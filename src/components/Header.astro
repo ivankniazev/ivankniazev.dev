@@ -1,0 +1,52 @@
+---
+import { useTranslations, getLocalizedPath, type Lang } from '../utils/i18n';
+
+interface Props {
+  lang: Lang;
+  currentPath: string;
+}
+
+const { lang, currentPath } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<header>
+  <nav>
+    <div class="nav-left">
+      <a href={getLocalizedPath('/', lang)} class="logo">
+        {lang === 'en' ? 'Ivan Kniazev' : 'Иван Князев'}
+      </a>
+    </div>
+    <div class="nav-center">
+      <a
+        href={getLocalizedPath('/', lang)}
+        class:list={[{active: currentPath === '/'}]}
+      >
+        {t('nav.home')}
+      </a>
+      <a
+        href={getLocalizedPath('/projects', lang)}
+        class:list={[{active: currentPath.startsWith('/projects')}]}
+      >
+        {t('nav.projects')}
+      </a>
+    </div>
+    <div class="nav-right">
+      <div class="language-switcher">
+        <a
+          href={currentPath === '/' || currentPath === '/ru' || currentPath === '/ru/' ? '/' : currentPath.replace('/ru', '')}
+          class:list={['lang-btn', {active: lang === 'en'}]}
+        >
+          EN
+        </a>
+        <span>|</span>
+        <a
+          href={`/ru${currentPath === '/' ? '' : currentPath}`}
+          class:list={['lang-btn', {active: lang === 'ru'}]}
+        >
+          RU
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
