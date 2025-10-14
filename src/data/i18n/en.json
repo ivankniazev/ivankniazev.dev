@@ -6,6 +6,19 @@
     "privacy": "Privacy",
     "refund": "Refund"
   },
+  "home": {
+    "title": "Ivan Kniazev",
+    "subtitle": "Software Developer & Problem Solver",
+    "description": "Passionate about creating efficient solutions and building tools that make a difference. Focused on web development, browser extensions, and user experience.",
+    "viewProjects": "View Projects",
+    "contactMe": "Contact Me",
+    "skillsTitle": "Skills & Technologies"
+  },
+  "projects": {
+    "title": "My Projects",
+    "description": "A collection of tools and applications I've built to solve real-world problems.",
+    "learnMore": "Learn More"
+  },
   "footer": {
     "copyright": "© 2025 Ivan Kniazev. All rights reserved.",
     "terms": "Terms of Service",

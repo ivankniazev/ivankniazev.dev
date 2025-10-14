@@ -1,0 +1,127 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import projectsData from '../../../data/projects.json';
+
+export async function getStaticPaths() {
+  return projectsData.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const lang = 'ru';
+---
+
+<Layout title={`${project.title[lang]} - Иван Князев`} lang={lang}>
+  <div class="project-detail">
+    <div class="project-header">
+      <h1>{project.title[lang]}</h1>
+      <div class="project-meta">
+        <span class="project-status">
+          {lang === 'en' ? 'Released' : 'Выпущено'}
+        </span>
+        <span class="project-date">{project.year}</span>
+      </div>
+    </div>
+
+    <div class="project-overview">
+      <div class="project-description">
+        <h2>{lang === 'en' ? 'Overview' : 'Обзор'}</h2>
+        <p>{project.overview[lang]}</p>
+      </div>
+
+      <div class="project-tech-stack">
+        <h2>{lang === 'en' ? 'Technology Stack' : 'Технологический стек'}</h2>
+        <div class="tech-grid">
+          {project.techStack.map((tech: string) => (
+            <span class="tech-tag">{tech}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div class="project-features">
+      <h2>{lang === 'en' ? 'Key Features' : 'Ключевые особенности'}</h2>
+      <div class="features-grid">
+        {project.features.map((feature: any) => (
+          <div class="feature-item">
+            <h3>{feature.title[lang]}</h3>
+            <p>{feature.description[lang]}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {project.useCases && (
+      <div class="project-use-cases">
+        <h2>{lang === 'en' ? 'Perfect For' : 'Идеально для'}</h2>
+        <div class="use-cases-list">
+          {project.useCases.map((useCase: any) => (
+            <div class="use-case-item">
+              <h4>{useCase.title[lang]}</h4>
+              <p>{useCase.description[lang]}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <div class="project-status-section">
+      <h2>{lang === 'en' ? 'Development Status' : 'Статус разработки'}</h2>
+      <div class="status-timeline">
+        {project.developmentStatus.map((status: any) => (
+          <div class:list={['status-item', { completed: status.completed }]}>
+            <h4>{status.title[lang]}</h4>
+            <p>{status.description[lang]}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {project.pricing && (
+      <div class="project-pricing">
+        <h2>{lang === 'en' ? 'Pricing' : 'Цены'}</h2>
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <h3>{lang === 'en' ? 'Free Plan' : 'Бесплатный план'}</h3>
+            <div class="price">
+              <span class="amount">{project.pricing.free.price[lang]}</span>
+              <span class="period">{project.pricing.free.period[lang]}</span>
+            </div>
+            <ul class="features-list">
+              {project.pricing.free.features.map((feature: any) => (
+                <li>{feature[lang]}</li>
+              ))}
+            </ul>
+          </div>
+          <div class="pricing-card premium">
+            <h3>{lang === 'en' ? 'Premium Plan' : 'Премиум план'}</h3>
+            <div class="price">
+              <span class="amount">{project.pricing.premium.price[lang]}</span>
+              <span class="period">{project.pricing.premium.period[lang]}</span>
+            </div>
+            <ul class="features-list">
+              {project.pricing.premium.features.map((feature: any) => (
+                <li>{feature[lang]}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    )}
+
+    <div class="project-actions">
+      <div class="action-buttons">
+        {project.links.download && (
+          <a href={project.links.download} class="btn primary" target="_blank">
+            {lang === 'en' ? 'Download Extension' : 'Скачать расширение'}
+          </a>
+        )}
+        <a href="mailto:contact@ivankniazev.dev" class="btn secondary">
+          {lang === 'en' ? 'Get Updates' : 'Получать обновления'}
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>

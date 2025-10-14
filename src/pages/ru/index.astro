@@ -1,10 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { useTranslations } from '../utils/i18n';
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../utils/i18n';
 
-const lang = 'en';
+const lang = 'ru';
 const t = useTranslations(lang);
-const title = 'Ivan Kniazev - Developer';
+const title = 'Иван Князев - Разработчик';
 ---
 
 <Layout title={title} lang={lang}>
@@ -15,7 +15,7 @@ const title = 'Ivan Kniazev - Developer';
       {t('home.description')}
     </p>
     <div class="cta-buttons">
-      <a href="/projects" class="btn primary">{t('home.viewProjects')}</a>
+      <a href="/ru/projects" class="btn primary">{t('home.viewProjects')}</a>
       <a href="mailto:contact@ivankniazev.dev" class="btn secondary">{t('home.contactMe')}</a>
     </div>
   </section>

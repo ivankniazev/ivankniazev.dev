@@ -1,12 +1,12 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import ProjectCard from '../../components/ProjectCard.astro';
-import { useTranslations } from '../../utils/i18n';
-import projectsData from '../../data/projects.json';
+import Layout from '../../../layouts/Layout.astro';
+import ProjectCard from '../../../components/ProjectCard.astro';
+import { useTranslations } from '../../../utils/i18n';
+import projectsData from '../../../data/projects.json';
 
-const lang = 'en';
+const lang = 'ru';
 const t = useTranslations(lang);
-const title = 'Projects - Ivan Kniazev';
+const title = 'Проекты - Иван Князев';
 ---
 
 <Layout title={title} lang={lang}>
