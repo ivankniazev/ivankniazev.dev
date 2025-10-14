@@ -3,6 +3,7 @@
     "id": "spotify-bpm",
     "slug": "spotify-bpm",
     "icon": "🎵",
+    "image": "/images/projects/spotify-bpm.png",
     "title": {
       "en": "Spotify BPM",
       "ru": "Spotify BPM"
@@ -226,6 +227,7 @@
     "id": "youtube-screenshot",
     "slug": "youtube-screenshot",
     "icon": "📸",
+    "image": "/images/projects/youtube-screenshot.png",
     "title": {
       "en": "YouTube Screenshot Extension",
       "ru": "Расширение для скриншотов YouTube"
