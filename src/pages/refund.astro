@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { useTranslations } from '../utils/i18n';
+
+const lang = 'en';
+const t = useTranslations(lang);
+const title = `${t('refund.title')} - Ivan Kniazev`;
+---
+
+<Layout title={title} lang={lang}>
+  <article class="policy">
+    <h1>{t('refund.title')}</h1>
+    <p class="last-updated">{t('refund.lastUpdated')}</p>
+
+    <section>
+      <h2>{t('refund.section1.title')}</h2>
+      <p>{t('refund.section1.content')}</p>
+    </section>
+
+    <section>
+      <h2>{t('refund.section2.title')}</h2>
+      <p>{t('refund.section2.content')}</p>
+    </section>
+
+    <section>
+      <h2>{t('refund.section3.title')}</h2>
+      <p>{t('refund.section3.content')}</p>
+    </section>
+
+    <section>
+      <h2>{t('refund.section4.title')}</h2>
+      <p>{t('refund.section4.content')}</p>
+      <ul>
+        <li>{t('refund.section4.list1')}</li>
+        <li>{t('refund.section4.list2')}</li>
+        <li>{t('refund.section4.list3')}</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>{t('refund.section5.title')}</h2>
+      <p>{t('refund.section5.content')}</p>
+    </section>
+
+    <section>
+      <h2>{t('refund.section6.title')}</h2>
+      <p>{t('refund.section6.content')}</p>
+    </section>
+  </article>
+</Layout>

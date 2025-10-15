@@ -1,0 +1,55 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../utils/i18n';
+
+const lang = 'ru';
+const t = useTranslations(lang);
+const title = `${t('privacy.title')} - Иван Князев`;
+---
+
+<Layout title={title} lang={lang}>
+  <article class="policy">
+    <h1>{t('privacy.title')}</h1>
+    <p class="last-updated">{t('privacy.lastUpdated')}</p>
+
+    <section>
+      <h2>{t('privacy.section1.title')}</h2>
+      <p>{t('privacy.section1.content')}</p>
+    </section>
+
+    <section>
+      <h2>{t('privacy.section2.title')}</h2>
+      <p>{t('privacy.section2.content')}</p>
+      <ul>
+        <li>{t('privacy.section2.list1')}</li>
+        <li>{t('privacy.section2.list2')}</li>
+        <li>{t('privacy.section2.list3')}</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>{t('privacy.section3.title')}</h2>
+      <p>{t('privacy.section3.content')}</p>
+    </section>
+
+    <section>
+      <h2>{t('privacy.section4.title')}</h2>
+      <p>{t('privacy.section4.content')}</p>
+    </section>
+
+    <section>
+      <h2>{t('privacy.section5.title')}</h2>
+      <p>{t('privacy.section5.content')}</p>
+    </section>
+
+    <section>
+      <h2>{t('privacy.section6.title')}</h2>
+      <p>{t('privacy.section6.content')}</p>
+    </section>
+
+    <section>
+      <h2>{t('privacy.section7.title')}</h2>
+      <p>{t('privacy.section7.content')}</p>
+    </section>
+  </article>
+</Layout>
