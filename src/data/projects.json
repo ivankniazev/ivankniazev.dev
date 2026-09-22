@@ -118,7 +118,7 @@
       "download": null,
       "github": null
     },
-    "accent": "#B4622A",
+    "accentHue": 58,
     "domain": {
       "en": "Kids & reading",
       "ru": "Дети и чтение"
@@ -349,7 +349,7 @@
       "download": null,
       "github": null
     },
-    "accent": "#C0392B",
+    "accentHue": 25,
     "domain": {
       "en": "Language learning",
       "ru": "Изучение языка"
@@ -531,7 +531,7 @@
       "download": null,
       "github": null
     },
-    "accent": "#2F4F8F",
+    "accentHue": 280,
     "domain": {
       "en": "Music & AI",
       "ru": "Музыка и AI"
@@ -764,7 +764,7 @@
       "download": null,
       "github": null
     },
-    "accent": "#1F7A6B",
+    "accentHue": 185,
     "domain": {
       "en": "Developer tools",
       "ru": "Инструменты разработчика"
@@ -911,7 +911,7 @@
       "download": null,
       "github": null
     },
-    "accent": "#B8860B",
+    "accentHue": 92,
     "domain": {
       "en": "Education",
       "ru": "Обучение"
@@ -1058,7 +1058,7 @@
       "download": null,
       "github": null
     },
-    "accent": "#5A4FA6",
+    "accentHue": 312,
     "domain": {
       "en": "Android & privacy",
       "ru": "Android и приватность"
@@ -1186,7 +1186,7 @@
       "download": "https://chromewebstore.google.com/detail/linkedin-cover-letter/olgpihaalcnfmhbihifndlkkoiacbdlg",
       "github": null
     },
-    "accent": "#0A66C2",
+    "accentHue": 250,
     "domain": {
       "en": "Browser extension",
       "ru": "Расширение браузера"
@@ -1426,7 +1426,7 @@
       "github": null,
       "website": null
     },
-    "accent": "#178F4B",
+    "accentHue": 150,
     "domain": {
       "en": "Browser extension",
       "ru": "Расширение браузера"
@@ -1562,7 +1562,7 @@
       "github": null,
       "website": null
     },
-    "accent": "#8E2C2C",
+    "accentHue": 340,
     "domain": {
       "en": "Browser extension",
       "ru": "Расширение браузера"

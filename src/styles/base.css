@@ -1,0 +1,74 @@
+/* Reset, document defaults, type roles. */
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  * { margin: 0; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    font-family: var(--f-mono);
+    font-size: var(--t-base);
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img, svg { max-width: 100%; display: block; }
+  a { color: inherit; }
+  ul, ol { padding: 0; list-style: none; }
+  h1, h2, h3, h4 { font-weight: inherit; font-size: inherit; text-wrap: balance; }
+  button { font: inherit; color: inherit; }
+
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Type roles */
+  .display {
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: var(--t-display);
+    line-height: 0.92;
+    letter-spacing: -0.045em;
+  }
+
+  .head {
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: var(--t-head);
+    letter-spacing: -0.04em;
+  }
+
+  .prose {
+    font-family: var(--f-body);
+    font-size: var(--t-body);
+    line-height: 1.65;
+    color: var(--ink-2);
+    max-width: var(--measure);
+  }
+
+  .lede {
+    font-family: var(--f-body);
+    font-size: var(--t-lead);
+    line-height: 1.55;
+    color: var(--ink-2);
+    max-width: 58ch;
+  }
+
+  .sans { font-family: var(--f-body); }
+  .num { font-variant-numeric: tabular-nums; }
+}

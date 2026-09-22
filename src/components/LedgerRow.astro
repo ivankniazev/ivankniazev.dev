@@ -1,0 +1,51 @@
+---
+import { useTranslations, getLocalizedPath, type Lang } from '../utils/i18n';
+import { progressOf, statusOf, stepState } from '../utils/projects';
+
+interface Props {
+  project: any;
+  lang: Lang;
+  /** "ledger" is the home page row, "list" the richer /projects row. */
+  variant?: 'ledger' | 'list';
+}
+
+const { project, lang, variant = 'ledger' } = Astro.props;
+const t = useTranslations(lang);
+const status = statusOf(project);
+const { done, total, steps } = progressOf(project);
+const href = getLocalizedPath(`/projects/${project.slug}`, lang);
+---
+
+<a
+  href={href}
+  class:list={['row', 'accent', `${variant}__row`]}
+  style={`--accent-h: ${project.accentHue}`}
+>
+  <span class:list={['mark', { 'mark--round': variant === 'list' }]} aria-hidden="true"></span>
+  <span class:list={[`${variant}__year`, 'num']}>{project.year}</span>
+  <span class={`${variant}__name`}>{project.title[lang]}</span>
+
+  {variant === 'ledger' ? (
+    <span class="ledger__stack">{project.tech.slice(0, 3).join(' · ')}</span>
+  ) : (
+    <>
+      <span class="list__area">{project.domain[lang]}</span>
+      <span class="list__stack">{project.tech.slice(1, 3).join(' · ')}</span>
+    </>
+  )}
+
+  {variant === 'ledger' ? (
+    <span class="ledger__steps num">{done}/{total}</span>
+  ) : (
+    <span class="track" role="img" aria-label={`${done}/${total}`}>
+      {steps.map((s: any) => {
+        const st = stepState(s);
+        return <span class:list={[{ 'is-progress': st === 'in-progress', 'is-pending': st === 'pending' }]}></span>;
+      })}
+    </span>
+  )}
+
+  <span class:list={[`${variant}__state`, 'state', `state--${status}`]}>
+    {t(`projects.status.${status}`)}
+  </span>
+</a>

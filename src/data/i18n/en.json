@@ -20,7 +20,16 @@
     "ledgerHint": "Every project, newest first",
     "featuredTitle": "Selected work",
     "stackTitle": "What they are built with",
-    "stackHint": "Counted across all projects"
+    "stackHint": "Counted across all projects",
+    "sliderHint": "Swipe or use the arrows",
+    "prevProject": "Previous project",
+    "nextProject": "Next project",
+    "open": "Open",
+    "countProducts": "products",
+    "countReleased": "released",
+    "countInProgress": "steps in progress",
+    "countSteps": "steps closed",
+    "allNine": "All projects"
   },
   "projects": {
     "title": "My Projects",
@@ -50,7 +59,28 @@
       "updates": "Get updates",
       "back": "All projects",
       "next": "Next project"
-    }
+    },
+    "filters": {
+      "all": "All",
+      "released": "Released",
+      "inProgress": "In progress",
+      "extensions": "Extensions"
+    },
+    "listTitle": "Work",
+    "listLede": "Nine products in two years — from a five-hundred-line extension to a model that lifts a drum part off a track. No covers here: the whole list, with the real state of play.",
+    "stackTitle": "Built with",
+    "stackHint": "across all nine",
+    "newestFirst": "Newest first",
+    "steps": "Steps",
+    "area": "Area",
+    "product": "Product",
+    "allSteps": "Development steps",
+    "stepsDone": "closed",
+    "stepsWork": "in progress",
+    "stepsQueue": "queued",
+    "onward": "Further down the ledger",
+    "contents": "Contents",
+    "related": "Related"
   },
   "footer": {
     "copyright": "© 2025 Ivan Kniazev. All rights reserved.",

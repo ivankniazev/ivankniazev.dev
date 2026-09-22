@@ -1,7 +1,7 @@
 ---
-import ProjectCard from './ProjectCard.astro';
+import LedgerRow from './LedgerRow.astro';
 import { useTranslations, getLocalizedPath, type Lang } from '../utils/i18n';
-import projectsData from '../data/projects.json';
+import { projects, slides, totals, progressOf, statusOf } from '../utils/projects';
 
 interface Props {
   lang: Lang;
@@ -9,83 +9,79 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
-
-const featured = projectsData.filter((p) => p.featured);
-const rest = projectsData.filter((p) => !p.featured && (p.status || 'released') === 'released');
-
-// Technology counts across every project's stack.
-const counts = new Map<string, number>();
-for (const p of projectsData) {
-  const seen = new Set<string>();
-  for (const tech of [...p.tech, ...p.techStack]) {
-    const key = tech.split(' (')[0].split(' / ')[0].trim();
-    if (seen.has(key)) continue;
-    seen.add(key);
-    counts.set(key, (counts.get(key) || 0) + 1);
-  }
-}
-const stack = [...counts.entries()]
-  .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-  .slice(0, 18);
+const cover = slides();
+const n = totals();
 ---
 
-<section class="hero">
-  <div class="hero-copy">
-    <p class="eyebrow">{t('home.eyebrow')}</p>
-    <h1 class="display">{t('home.headline')}</h1>
-    <p class="lede">{t('home.lede')}</p>
-    <div class="actions">
-      <a href={getLocalizedPath('/projects', lang)} class="btn primary">{t('home.viewProjects')}</a>
-      <a href="mailto:contact@ivankniazev.dev" class="btn">{t('home.contactMe')}</a>
-    </div>
+<section class="slider" aria-label={t('home.featuredTitle')}>
+  <div class="slider__track" id="slides">
+    {cover.map((p: any, i: number) => {
+      const { done, total } = progressOf(p);
+      const status = statusOf(p);
+      return (
+        <a
+          class="slide accent"
+          id={`slide-${i + 1}`}
+          href={getLocalizedPath(`/projects/${p.slug}`, lang)}
+          style={`--accent-h: ${p.accentHue}`}
+        >
+          <span class="slide__top">
+            <span class="meta">{String(i + 1).padStart(2, '0')} — {p.domain[lang]}</span>
+            <span class="meta">
+              {p.year} · {t(`projects.status.${status}`)} · {done}/{total}
+            </span>
+          </span>
+          <span>
+            <span class="slide__name">{p.title[lang]}</span>
+            <span class="slide__text">{p.shortDescription[lang]}</span>
+          </span>
+          <span class="slide__foot">
+            <span class="tags">
+              {p.tech.slice(0, 3).map((tech: string) => <span class="tag">{tech}</span>)}
+            </span>
+            <span class="slide__cta">{t('home.open')} →</span>
+          </span>
+        </a>
+      );
+    })}
   </div>
 
-  <aside class="ledger" aria-labelledby="ledger-title">
-    <div class="ledger-head">
-      <h2 id="ledger-title">{t('home.ledgerTitle')}</h2>
-      <span>{t('home.ledgerHint')}</span>
+  <div class="slider__bar shell">
+    <div class="slider__nav">
+      <a class="btn btn--sm" href={`#slide-${cover.length}`} aria-label={t('home.prevProject')}>←</a>
+      <a class="btn btn--sm" href="#slide-2" aria-label={t('home.nextProject')}>→</a>
     </div>
-    <ol class="ledger-list">
-      {projectsData.map((p) => {
-        const status = p.status || 'released';
-        return (
-          <li style={`--accent: ${p.accent}`}>
-            <a href={getLocalizedPath(`/projects/${p.slug}`, lang)}>
-              <span class="ledger-year">{p.year}</span>
-              <span class="ledger-name">{p.title[lang]}</span>
-              <span class="ledger-domain">{p.domain[lang]}</span>
-              <span class:list={['ledger-state', status]}>{t(`projects.status.${status}`)}</span>
-            </a>
-          </li>
-        );
-      })}
-    </ol>
-  </aside>
-</section>
-
-<section class="section">
-  <h2 class="section-title">
-    <span>{t('home.featuredTitle')}</span>
-    <a href={getLocalizedPath('/projects', lang)} class="section-link">{t('home.viewProjects')} →</a>
-  </h2>
-  <div class="card-grid">
-    {featured.map((project) => (
-      <ProjectCard project={project} lang={lang} featured={true} />
-    ))}
-    {rest.map((project) => (
-      <ProjectCard project={project} lang={lang} />
-    ))}
+    <div class="slider__ticks">
+      {cover.map((p: any, i: number) => (
+        <a
+          href={`#slide-${i + 1}`}
+          class="accent"
+          style={`--accent-h: ${p.accentHue}`}
+          aria-current={i === 0 ? 'true' : undefined}
+          aria-label={p.title[lang]}
+        ></a>
+      ))}
+    </div>
+    <span class="meta">{t('home.sliderHint')}</span>
+    <div class="counters meta">
+      <span><b>{String(n.products).padStart(2, '0')}</b> {t('home.countProducts')}</span>
+      <span><b>{String(n.released).padStart(2, '0')}</b> {t('home.countReleased')}</span>
+      <span><b class="is-work">{String(n.work).padStart(2, '0')}</b> {t('home.countInProgress')}</span>
+      <span><b>{n.done}</b><span class="is-rest">/{n.steps}</span> {t('home.countSteps')}</span>
+    </div>
   </div>
 </section>
 
-<section class="section stack" aria-labelledby="stack-title">
-  <h2 class="section-title" id="stack-title">
-    <span>{t('home.stackTitle')}</span>
-    <span class="section-hint">{t('home.stackHint')}</span>
-  </h2>
-  <ul class="stack-list">
-    {stack.map(([name, n]) => (
-      <li><span>{name}</span><span class="stack-count">×{n}</span></li>
-    ))}
-  </ul>
+<section class="shell" aria-label={t('home.ledgerTitle')}>
+  <div class="row ledger__head meta" aria-hidden="true">
+    <span></span>
+    <span>{lang === 'en' ? 'Year' : 'Год'}</span>
+    <span>{t('projects.product')}</span>
+    <span class="ledger__stack">{t('projects.labels.stack')}</span>
+    <span class="ledger__steps">{t('projects.steps')}</span>
+    <span class="ledger__state">{t('projects.labels.status')}</span>
+  </div>
+  {projects.map((p: any) => <LedgerRow project={p} lang={lang} variant="ledger" />)}
+
+  <p class="prose home__note">{t('home.lede')}</p>
 </section>

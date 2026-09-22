@@ -2,14 +2,17 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import type { Lang } from '../utils/i18n';
+import '../styles/main.css';
 
 interface Props {
   title: string;
   lang: Lang;
   description?: string;
+  /** Legal pages render their own cover and sit on the light sheet. */
+  bare?: boolean;
 }
 
-const { title, lang, description } = Astro.props;
+const { title, lang, description, bare = false } = Astro.props;
 const currentPath = Astro.url.pathname;
 ---
 
@@ -18,7 +21,7 @@ const currentPath = Astro.url.pathname;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="dark light" />
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -26,13 +29,12 @@ const currentPath = Astro.url.pathname;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=Unbounded:wght@400;600;800&display=swap"
     />
-    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
     <Header lang={lang} currentPath={currentPath} />
-    <main>
+    <main class:list={[{ 'main--bare': bare }]}>
       <slot />
     </main>
     <Footer lang={lang} />

@@ -1,0 +1,68 @@
+---
+import { useTranslations, getLocalizedPath, type Lang } from '../utils/i18n';
+
+interface Props {
+  lang: Lang;
+  /** i18n namespace: "privacy" | "terms" | "refund" */
+  doc: string;
+  /** Number of numbered sections in that namespace. */
+  sections: number;
+  /** Route this document lives at — shown in the cover, never changes. */
+  path: string;
+}
+
+const { lang, doc, sections, path } = Astro.props;
+const t = useTranslations(lang);
+
+const items = Array.from({ length: sections }, (_, i) => {
+  const key = `${doc}.section${i + 1}`;
+  const list = ['list1', 'list2', 'list3']
+    .map((l) => t(`${key}.${l}`))
+    .filter((v) => v && !v.startsWith(`${key}.`));
+  return { id: `s${i + 1}`, title: t(`${key}.title`), content: t(`${key}.content`), list };
+});
+
+const others = [
+  { path: '/terms', label: t('footer.terms') },
+  { path: '/privacy', label: t('footer.privacy') },
+  { path: '/refund', label: t('footer.refund') },
+].filter((o) => o.path !== path);
+---
+
+<header class="policy-cover">
+  <div class="shell">
+    <div class="policy-cover__top">
+      <span class="meta">{path}</span>
+      <span class="meta">{t(`${doc}.lastUpdated`)}</span>
+    </div>
+    <h1>{t(`${doc}.title`)}</h1>
+  </div>
+</header>
+
+<div class="sheet">
+  <div class="sheet__inner shell">
+    <nav class="toc" aria-label={t('projects.contents')}>
+      <span class="meta">{t('projects.contents')}</span>
+      {items.map((s) => <a href={`#${s.id}`}>{s.title}</a>)}
+    </nav>
+
+    <article class="policy">
+      {items.map((s) => (
+        <section id={s.id}>
+          <h2>{s.title}</h2>
+          <p set:html={s.content.replace(
+            /([\w.+-]+@[\w-]+\.[\w.]+)/,
+            '<a href="mailto:$1">$1</a>'
+          )} />
+          {s.list.length > 0 && <ul>{s.list.map((li) => <li>{li}</li>)}</ul>}
+        </section>
+      ))}
+    </article>
+
+    <aside class="policy-aside">
+      <span class="meta">{t('projects.related')}</span>
+      {others.map((o) => <a href={getLocalizedPath(o.path, lang)}>{o.label}</a>)}
+      <a href="mailto:contact@ivankniazev.dev">contact@ivankniazev.dev</a>
+    </aside>
+  </div>
+</div>

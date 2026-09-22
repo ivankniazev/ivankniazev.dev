@@ -15,18 +15,17 @@ const ruPath = isHome ? '/ru/' : `/ru${currentPath}`;
 ---
 
 <header class="site-header">
-  <nav class="site-nav" aria-label="Main">
-    <a href={getLocalizedPath('/', lang)} class="logo">
-      <span class="logo-mark" aria-hidden="true">IK</span>
-      <span class="logo-name">{lang === 'en' ? 'Ivan Kniazev' : 'Иван Князев'}</span>
-    </a>
-    <div class="nav-links">
-      <a href={getLocalizedPath('/', lang)} class:list={[{ active: isHome }]}>{t('nav.home')}</a>
-      <a href={getLocalizedPath('/projects', lang)} class:list={[{ active: isProjects }]}>{t('nav.projects')}</a>
+  <nav class="nav shell" aria-label="Main">
+    <a href={getLocalizedPath('/', lang)} class="nav__logo">{lang === 'en' ? 'IK' : 'ИК'}</a>
+    <span class="nav__domain">ivankniazev.dev</span>
+    <div class="nav__links">
+      <a href={getLocalizedPath('/', lang)} aria-current={isHome ? 'page' : undefined}>{t('nav.home')}</a>
+      <a href={getLocalizedPath('/projects', lang)} aria-current={isProjects ? 'page' : undefined}>{t('nav.projects')}</a>
     </div>
-    <div class="lang-switch" aria-label="Language">
-      <a href={enPath} class:list={[{ active: lang === 'en' }]} hreflang="en">EN</a>
-      <a href={ruPath} class:list={[{ active: lang === 'ru' }]} hreflang="ru">RU</a>
+    <div class="nav__lang" aria-label="Language">
+      <a href={enPath} hreflang="en" aria-current={lang === 'en' ? 'true' : undefined}>EN</a>
+      <span class="nav__sep" aria-hidden="true">/</span>
+      <a href={ruPath} hreflang="ru" aria-current={lang === 'ru' ? 'true' : undefined}>RU</a>
     </div>
   </nav>
 </header>

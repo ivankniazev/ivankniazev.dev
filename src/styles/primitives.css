@@ -1,0 +1,106 @@
+/* Five primitives. Every list, panel and label on the site composes
+   from these instead of redeclaring padding and borders. */
+
+@layer primitives {
+  /* .row — a list row with a hairline under it. The grid columns are
+     the only thing that varies between the ledger, the facts list and
+     the stack list. */
+  .row {
+    display: grid;
+    align-items: center;
+    column-gap: var(--s-4);
+    padding: var(--s-3) 0;
+    border-bottom: var(--rule-hair);
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .row:last-child { border-bottom: 0; }
+  .rows--ruled { border-top: var(--rule-strong); }
+
+  /* .panel — a raised plane. */
+  .panel {
+    background: var(--surface);
+    border: var(--rule-hair);
+    border-radius: var(--r-1);
+    padding: var(--s-5);
+  }
+
+  /* .meta — mono small caps for labels and data. */
+  .meta {
+    font-family: var(--f-mono);
+    font-size: var(--t-micro);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .meta--tight { font-size: 0.65rem; letter-spacing: 0.1em; }
+
+  /* .tag — outline, never a fill: colour belongs to the accent. */
+  .tag {
+    font-family: var(--f-mono);
+    font-size: var(--t-micro);
+    padding: 2px var(--s-2);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r-1);
+    color: var(--ink-2);
+    white-space: nowrap;
+  }
+  .tags { display: flex; flex-wrap: wrap; gap: var(--s-1); }
+
+  /* .mark — the only place a project's colour shows in a shared list. */
+  .mark {
+    width: 7px;
+    height: 7px;
+    background: var(--accent-text);
+    flex-shrink: 0;
+  }
+
+  /* Buttons — 44px minimum target. */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--s-2);
+    min-height: 44px;
+    padding: 0 var(--s-5);
+    font-family: var(--f-mono);
+    font-size: var(--t-small);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r-1);
+    color: var(--ink);
+    background: transparent;
+    cursor: pointer;
+    transition: background var(--dur-fast) var(--ease),
+                border-color var(--dur-fast) var(--ease),
+                color var(--dur-fast) var(--ease);
+  }
+  .btn:hover { border-color: var(--ink); background: var(--surface); }
+  .btn--primary {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+  }
+  .btn--primary:hover {
+    background: var(--ink-2);
+    border-color: var(--ink-2);
+    color: var(--bg);
+  }
+  .btn--sm { min-height: 34px; padding: 0 var(--s-3); font-size: var(--t-micro); }
+
+  /* State labels — fixed meaning, never the project accent. */
+  .state { font-family: var(--f-mono); font-size: var(--t-micro); letter-spacing: 0.1em; text-transform: uppercase; }
+  .state--released { color: var(--st-ok); }
+  .state--beta,
+  .state--prototype { color: var(--st-work); }
+  .state--in-development { color: var(--st-wait); }
+
+  /* Step track — one segment per development step. */
+  .track { display: flex; gap: 2px; align-items: center; }
+  .track > span { flex-grow: 1; height: 7px; background: var(--accent-text); }
+  .track > .is-progress { opacity: 0.35; }
+  .track > .is-pending { background: none; border: 1px solid var(--line-strong); }
+}

@@ -1,7 +1,7 @@
 ---
-import ProjectCard from './ProjectCard.astro';
+import LedgerRow from './LedgerRow.astro';
 import { useTranslations, type Lang } from '../utils/i18n';
-import projectsData from '../data/projects.json';
+import { projects, totals, stackCounts } from '../utils/projects';
 
 interface Props {
   lang: Lang;
@@ -9,32 +9,65 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
-const released = projectsData.filter((p) => (p.status || 'released') === 'released');
-const inProgress = projectsData.filter((p) => (p.status || 'released') !== 'released');
+const n = totals();
+const stack = stackCounts(12);
 ---
 
-<section class="page-intro">
-  <p class="eyebrow">{t('nav.projects')} · {projectsData.length}</p>
-  <h1 class="display">{t('projects.title')}</h1>
-  <p class="lede">{t('projects.description')}</p>
-</section>
+<section class="list-head shell">
+  <div>
+    <h1 class="display">{t('projects.listTitle')}</h1>
+    <p class="lede">{t('projects.listLede')}</p>
+  </div>
 
-<section class="card-grid" aria-label={t('projects.status.released')}>
-  {released.map((project) => (
-    <ProjectCard project={project} lang={lang} featured={project.featured} />
-  ))}
-</section>
-
-{inProgress.length > 0 && (
-  <section class="section">
-    <h2 class="section-title">
-      <span>{lang === 'en' ? 'In progress' : 'В работе'}</span>
-      <span class="count">{inProgress.length}</span>
-    </h2>
-    <div class="card-grid compact">
-      {inProgress.map((project) => (
-        <ProjectCard project={project} lang={lang} />
-      ))}
+  <div class="summary">
+    <div class="summary__top">
+      <span class="meta">{t('projects.allSteps')}</span>
+      <span class="summary__value num">{n.done}<span>/{n.steps}</span></span>
     </div>
-  </section>
-)}
+    <div class="summary__bar" role="img" aria-label={`${n.done}/${n.steps}`}>
+      <i class="is-done" style={`flex-grow: ${n.done}`}></i>
+      <i class="is-work" style={`flex-grow: ${n.work}`}></i>
+      <i class="is-queue" style={`flex-grow: ${n.pending}`}></i>
+    </div>
+    <div class="summary__key">
+      <span><i class="is-done"></i>{n.done} {t('projects.stepsDone')}</span>
+      <span><i class="is-work"></i>{n.work} {t('projects.stepsWork')}</span>
+      <span><i class="is-queue"></i>{n.pending} {t('projects.stepsQueue')}</span>
+    </div>
+  </div>
+</section>
+
+<div class="filters shell">
+  <span class="meta">{lang === 'en' ? 'Filter' : 'Фильтр'}</span>
+  <a class="btn btn--sm btn--on" href="#all">{t('projects.filters.all')} · {n.products}</a>
+  <a class="btn btn--sm" href="#released">{t('projects.filters.released')} · {n.released}</a>
+  <a class="btn btn--sm" href="#in-progress">{t('projects.filters.inProgress')} · {n.inProgress}</a>
+  <a class="btn btn--sm" href="#extensions">{t('projects.filters.extensions')} · {n.extensions}</a>
+  <span class="meta filters__hint">{t('projects.newestFirst')}</span>
+</div>
+
+<section class="shell" id="all">
+  <div class="row list__head meta" aria-hidden="true">
+    <span></span>
+    <span>{lang === 'en' ? 'Year' : 'Год'}</span>
+    <span>{t('projects.product')}</span>
+    <span class="list__area">{t('projects.area')}</span>
+    <span class="list__stack">{t('projects.labels.stack')}</span>
+    <span>{t('projects.steps')}</span>
+    <span class="list__state">{t('projects.labels.status')}</span>
+  </div>
+  {projects.map((p: any) => <LedgerRow project={p} lang={lang} variant="list" />)}
+</section>
+
+<section class="section shell" aria-labelledby="stack-title">
+  <div class="section__head">
+    <h2 class="head" id="stack-title">{t('projects.stackTitle')}</h2>
+    <span class="rule" aria-hidden="true"></span>
+    <span class="meta">{t('projects.stackHint')}</span>
+  </div>
+  <ul class="stack-list">
+    {stack.map(([name, count]) => (
+      <li class="row"><span>{name}</span><span class="stack-count num">×{count}</span></li>
+    ))}
+  </ul>
+</section>

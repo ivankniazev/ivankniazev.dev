@@ -1,0 +1,92 @@
+/* ------------------------------------------------------------------
+   ivankniazev.dev — tokens
+   One declaration per token. Dark is the site's ground; the light half
+   of every light-dark() pair is kept so a light theme is one attribute
+   away (:root[data-theme="light"]).
+   Project colour is a hue angle; lightness and chroma come from here,
+   so contrast is identical across all nine products.
+   ------------------------------------------------------------------ */
+
+@layer tokens {
+  :root {
+    color-scheme: dark;
+
+    /* Neutrals — one hue (155), low chroma */
+    --bg:          light-dark(#F0F5F2, #0A0D0B);
+    --surface:     light-dark(#FFFFFF, #141917);
+    --sunk:        light-dark(#E6EBE7, #050706);
+    --line:        light-dark(#D5DBD7, #222724);
+    --line-strong: light-dark(#B9BFBB, #3A403C);
+    --ink-3:       light-dark(#676E69, #939A95);
+    --ink-2:       light-dark(#494F4B, #BFC6C1);
+    --ink:         light-dark(#171B18, #EDF2EE);
+
+    /* The light reading sheet — a surface, not a theme.
+       Legal pages sit on it whatever the theme is. */
+    --sheet:     #FBFCFB;
+    --sheet-ink: #171B18;
+    --sheet-ink-2: #333833;
+    --sheet-ink-3: #676E69;
+    --sheet-line: #E6EBE7;
+
+    /* Chrome — never per-project */
+    --focus: var(--ink);
+
+    /* Status — a property of the product, not of the page */
+    --st-ok:   light-dark(oklch(0.48 0.11 150), oklch(0.80 0.10 150));
+    --st-work: light-dark(oklch(0.48 0.11 75),  oklch(0.80 0.10 75));
+    --st-wait: var(--ink-2);
+
+    /* Project accent — a project sets only --accent-h */
+    --accent-h: 155;
+    --accent-on-solid: #FFFFFF;
+
+    /* Type */
+    --f-display: 'Unbounded', 'Helvetica Neue', Arial, sans-serif;
+    --f-body:    'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
+    --f-mono:    'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+    --t-micro:   0.75rem;
+    --t-small:   0.8125rem;
+    --t-base:    0.9375rem;
+    --t-body:    1.0625rem;
+    --t-lead:    clamp(1.0625rem, 0.75vw + 0.9rem, 1.1875rem);
+    --t-title:   1.25rem;
+    --t-head:    clamp(1.5rem, 1.6vw + 1rem, 1.875rem);
+    --t-display: clamp(2.25rem, 4.4vw + 1rem, 4.75rem);
+
+    /* Space — base 4px */
+    --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px;
+    --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px;
+    --s-gut: clamp(16px, 4vw, 48px);
+    --s-sec: clamp(48px, 7vw, 88px);
+
+    /* Shape, rules, motion */
+    --r-1: 4px;
+    --r-2: 8px;
+    --r-full: 999px;
+    --rule-hair: 1px solid var(--line);
+    --rule-strong: 2px solid var(--ink);
+    --dur-fast: 120ms;
+    --dur-base: 200ms;
+    --ease: cubic-bezier(0.2, 0, 0, 1);
+
+    --wrap: 1440px;
+    --measure: 62ch;
+  }
+
+  /* The three accent levels are DERIVED, so they must be declared on the
+     element that sets --accent-h — a custom property substitutes where it
+     is declared, not where it is used. Declaring them on :root alone would
+     freeze every project to the root hue. `.accent` carries them; children
+     inherit the already-resolved colours. */
+  :root,
+  .accent {
+    --accent-text:  light-dark(oklch(0.48 0.115 var(--accent-h)), oklch(0.80 0.105 var(--accent-h)));
+    --accent-solid: oklch(0.52 0.14 var(--accent-h));
+    --accent-tint:  light-dark(oklch(0.945 0.035 var(--accent-h)), oklch(0.28 0.045 var(--accent-h)));
+  }
+
+  :root[data-theme="light"] { color-scheme: light; }
+  :root[data-theme="dark"]  { color-scheme: dark; }
+}
