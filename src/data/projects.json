@@ -117,7 +117,13 @@
       "website": "https://zhivye-skazki.pages.dev",
       "download": null,
       "github": null
-    }
+    },
+    "accent": "#B4622A",
+    "domain": {
+      "en": "Kids & reading",
+      "ru": "Дети и чтение"
+    },
+    "featured": false
   },
   {
     "id": "srpski-korak",
@@ -342,7 +348,13 @@
       "website": "https://srpskikorak.com",
       "download": null,
       "github": null
-    }
+    },
+    "accent": "#C0392B",
+    "domain": {
+      "en": "Language learning",
+      "ru": "Изучение языка"
+    },
+    "featured": true
   },
   {
     "id": "drum-analyzer",
@@ -518,7 +530,13 @@
       "website": "https://drumanalyzer.com",
       "download": null,
       "github": null
-    }
+    },
+    "accent": "#2F4F8F",
+    "domain": {
+      "en": "Music & AI",
+      "ru": "Музыка и AI"
+    },
+    "featured": true
   },
   {
     "id": "chromeniche",
@@ -745,7 +763,13 @@
       "website": "https://chromeniche.com",
       "download": null,
       "github": null
-    }
+    },
+    "accent": "#1F7A6B",
+    "domain": {
+      "en": "Developer tools",
+      "ru": "Инструменты разработчика"
+    },
+    "featured": false
   },
   {
     "id": "pdd-serbia",
@@ -886,7 +910,13 @@
       "website": null,
       "download": null,
       "github": null
-    }
+    },
+    "accent": "#B8860B",
+    "domain": {
+      "en": "Education",
+      "ru": "Обучение"
+    },
+    "featured": false
   },
   {
     "id": "privacy-cleaner",
@@ -1027,7 +1057,13 @@
       "website": null,
       "download": null,
       "github": null
-    }
+    },
+    "accent": "#5A4FA6",
+    "domain": {
+      "en": "Android & privacy",
+      "ru": "Android и приватность"
+    },
+    "featured": false
   },
   {
     "id": "linkedin-cover-letter",
@@ -1149,7 +1185,13 @@
       "website": null,
       "download": "https://chromewebstore.google.com/detail/linkedin-cover-letter/olgpihaalcnfmhbihifndlkkoiacbdlg",
       "github": null
-    }
+    },
+    "accent": "#0A66C2",
+    "domain": {
+      "en": "Browser extension",
+      "ru": "Расширение браузера"
+    },
+    "featured": false
   },
   {
     "id": "spotify-bpm",
@@ -1383,7 +1425,13 @@
       "download": "https://chromewebstore.google.com/detail/spotify-bpm/fcgopiibenibdppldlmopiojcdfagecp",
       "github": null,
       "website": null
-    }
+    },
+    "accent": "#178F4B",
+    "domain": {
+      "en": "Browser extension",
+      "ru": "Расширение браузера"
+    },
+    "featured": false
   },
   {
     "id": "youtube-screenshot",
@@ -1513,6 +1561,12 @@
       "download": "https://chromewebstore.google.com/detail/youtube-screenshot/fhpjgmfckbkgfhkkjgfajfaeacapeefj?authuser=0&hl=en",
       "github": null,
       "website": null
-    }
+    },
+    "accent": "#8E2C2C",
+    "domain": {
+      "en": "Browser extension",
+      "ru": "Расширение браузера"
+    },
+    "featured": false
   }
 ]

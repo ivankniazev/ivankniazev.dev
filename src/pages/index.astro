@@ -1,36 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import HomePage from '../components/HomePage.astro';
 import { useTranslations } from '../utils/i18n';
 
 const lang = 'en';
 const t = useTranslations(lang);
-const title = 'Ivan Kniazev - Developer';
 ---
 
-<Layout title={title} lang={lang}>
-  <section class="hero">
-    <h1>{t('home.title')}</h1>
-    <p class="subtitle">{t('home.subtitle')}</p>
-    <p class="description">
-      {t('home.description')}
-    </p>
-    <div class="cta-buttons">
-      <a href="/projects" class="btn primary">{t('home.viewProjects')}</a>
-      <a href="mailto:contact@ivankniazev.dev" class="btn secondary">{t('home.contactMe')}</a>
-    </div>
-  </section>
-
-  <section class="skills">
-    <h2>{t('home.skillsTitle')}</h2>
-    <div class="skills-grid">
-      <div class="skill-item">JavaScript</div>
-      <div class="skill-item">TypeScript</div>
-      <div class="skill-item">React</div>
-      <div class="skill-item">Node.js</div>
-      <div class="skill-item">HTML/CSS</div>
-      <div class="skill-item">Browser Extensions</div>
-      <div class="skill-item">Git</div>
-      <div class="skill-item">Web APIs</div>
-    </div>
-  </section>
+<Layout title="Ivan Kniazev" lang={lang} description={t('home.lede')}>
+  <HomePage lang={lang} />
 </Layout>

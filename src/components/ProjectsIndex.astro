@@ -1,0 +1,40 @@
+---
+import ProjectCard from './ProjectCard.astro';
+import { useTranslations, type Lang } from '../utils/i18n';
+import projectsData from '../data/projects.json';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const released = projectsData.filter((p) => (p.status || 'released') === 'released');
+const inProgress = projectsData.filter((p) => (p.status || 'released') !== 'released');
+---
+
+<section class="page-intro">
+  <p class="eyebrow">{t('nav.projects')} · {projectsData.length}</p>
+  <h1 class="display">{t('projects.title')}</h1>
+  <p class="lede">{t('projects.description')}</p>
+</section>
+
+<section class="card-grid" aria-label={t('projects.status.released')}>
+  {released.map((project) => (
+    <ProjectCard project={project} lang={lang} featured={project.featured} />
+  ))}
+</section>
+
+{inProgress.length > 0 && (
+  <section class="section">
+    <h2 class="section-title">
+      <span>{lang === 'en' ? 'In progress' : 'В работе'}</span>
+      <span class="count">{inProgress.length}</span>
+    </h2>
+    <div class="card-grid compact">
+      {inProgress.map((project) => (
+        <ProjectCard project={project} lang={lang} />
+      ))}
+    </div>
+  </section>
+)}

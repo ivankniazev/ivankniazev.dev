@@ -1,45 +1,46 @@
 ---
-import { getLocalizedPath, type Lang } from '../utils/i18n';
+import { getLocalizedPath, useTranslations, type Lang } from '../utils/i18n';
 
 interface Props {
   project: any;
   lang: Lang;
+  featured?: boolean;
 }
 
-const { project, lang } = Astro.props;
-const badgeLabels: Record<string, { en: string; ru: string }> = {
-  beta: { en: 'Beta', ru: 'Бета' },
-  prototype: { en: 'Prototype', ru: 'Прототип' },
-  'in-development': { en: 'In Development', ru: 'В разработке' },
-};
-const badge = badgeLabels[project.status];
+const { project, lang, featured = false } = Astro.props;
+const t = useTranslations(lang);
+const href = getLocalizedPath(`/projects/${project.slug}`, lang);
+const status = project.status || 'released';
+const initials = project.title.en
+  .split(/\s+/)
+  .slice(0, 2)
+  .map((w: string) => w[0])
+  .join('')
+  .toUpperCase();
 ---
 
-<div class="project-card">
-  <div class="project-image">
+<article class:list={['card', { featured }]} style={`--accent: ${project.accent}`}>
+  <a href={href} class="card-media" aria-hidden="true" tabindex="-1">
     {project.image ? (
-      <img src={project.image} alt={project.title[lang]} width="440" height="280" loading="lazy" />
+      <img src={project.image} alt="" width="760" height="560" loading="lazy" />
     ) : (
-      <div class="project-placeholder">{project.icon}</div>
+      <span class="card-mono">{initials}</span>
     )}
-  </div>
-  <div class="project-content">
-    <h3>
-      {project.title[lang]}
-      {badge && <span class:list={['status-badge', project.status]}>{badge[lang]}</span>}
-    </h3>
-    <p class="project-description">
-      {project.shortDescription[lang]}
+  </a>
+  <div class="card-body">
+    <p class="eyebrow">
+      <span>{project.domain[lang]}</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span>{project.year}</span>
+      {status !== 'released' && (
+        <>
+          <span class="dot" aria-hidden="true"></span>
+          <span class:list={['state', status]}>{t(`projects.status.${status}`)}</span>
+        </>
+      )}
     </p>
-    <div class="project-tech">
-      {project.tech.map((tech: string) => (
-        <span class="tech-tag">{tech}</span>
-      ))}
-    </div>
-    <div class="project-links">
-      <a href={getLocalizedPath(`/projects/${project.slug}`, lang)} class="btn primary">
-        {lang === 'en' ? 'Learn More' : 'Подробнее'}
-      </a>
-    </div>
+    <h3 class="card-title"><a href={href}>{project.title[lang]}</a></h3>
+    <p class="card-text">{project.shortDescription[lang]}</p>
+    <p class="card-tech">{project.tech.join(' · ')}</p>
   </div>
-</div>
+</article>

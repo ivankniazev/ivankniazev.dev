@@ -1,25 +1,12 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import ProjectCard from '../../components/ProjectCard.astro';
+import ProjectsIndex from '../../components/ProjectsIndex.astro';
 import { useTranslations } from '../../utils/i18n';
-import projectsData from '../../data/projects.json';
 
 const lang = 'en';
 const t = useTranslations(lang);
-const title = 'Projects - Ivan Kniazev';
 ---
 
-<Layout title={title} lang={lang}>
-  <section class="page-header">
-    <h1>{t('projects.title')}</h1>
-    <p>
-      {t('projects.description')}
-    </p>
-  </section>
-
-  <section class="projects-grid">
-    {projectsData.map((project) => (
-      <ProjectCard project={project} lang={lang} />
-    ))}
-  </section>
+<Layout title="Projects · Ivan Kniazev" lang={lang} description={t('projects.description')}>
+  <ProjectsIndex lang={lang} />
 </Layout>

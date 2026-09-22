@@ -1,0 +1,149 @@
+---
+import { useTranslations, getLocalizedPath, type Lang } from '../utils/i18n';
+import projectsData from '../data/projects.json';
+
+interface Props {
+  project: any;
+  lang: Lang;
+}
+
+const { project, lang } = Astro.props;
+const t = useTranslations(lang);
+const status = project.status || 'released';
+const index = projectsData.findIndex((p) => p.slug === project.slug);
+const next = projectsData[(index + 1) % projectsData.length];
+const links = project.links || {};
+const hasLinks = links.website || links.download || links.github;
+const initials = project.title.en
+  .split(/\s+/)
+  .slice(0, 2)
+  .map((w: string) => w[0])
+  .join('')
+  .toUpperCase();
+---
+
+<article class="detail" style={`--accent: ${project.accent}`}>
+  <header class="detail-head">
+    <p class="eyebrow">
+      <a href={getLocalizedPath('/projects', lang)}>{t('projects.labels.back')}</a>
+      <span class="dot" aria-hidden="true"></span>
+      <span>{project.domain[lang]}</span>
+    </p>
+    <h1 class="display">{project.title[lang]}</h1>
+    <p class="lede">{project.shortDescription[lang]}</p>
+  </header>
+
+  <div class="detail-media">
+    {project.image ? (
+      <img src={project.image} alt={project.title[lang]} width="760" height="560" />
+    ) : (
+      <span class="card-mono">{initials}</span>
+    )}
+  </div>
+
+  <div class="detail-grid">
+    <div class="detail-main">
+      <section class="detail-section">
+        <h2 class="section-title"><span>{t('projects.labels.overview')}</span></h2>
+        <p class="prose">{project.overview[lang]}</p>
+      </section>
+
+      <section class="detail-section">
+        <h2 class="section-title"><span>{t('projects.labels.features')}</span><span class="count">{project.features.length}</span></h2>
+        <dl class="features">
+          {project.features.map((f: any) => (
+            <div class="feature">
+              <dt>{f.title[lang]}</dt>
+              <dd>{f.description[lang]}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      {project.useCases && (
+        <section class="detail-section">
+          <h2 class="section-title"><span>{t('projects.labels.useCases')}</span></h2>
+          <ul class="use-cases">
+            {project.useCases.map((u: any) => (
+              <li><strong>{u.title[lang]}</strong> <span>{u.description[lang]}</span></li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {project.pricing && (
+        <section class="detail-section">
+          <h2 class="section-title"><span>{t('projects.labels.pricing')}</span></h2>
+          <div class="pricing">
+            <div class="plan">
+              <p class="plan-name">{t('projects.labels.free')}</p>
+              <p class="plan-price">{project.pricing.free.price[lang]} <small>{project.pricing.free.period[lang]}</small></p>
+              <ul>{project.pricing.free.features.map((f: any) => <li>{f[lang]}</li>)}</ul>
+            </div>
+            <div class="plan premium">
+              <p class="plan-name">{t('projects.labels.premium')}</p>
+              <p class="plan-price">{project.pricing.premium.price[lang]} <small>{project.pricing.premium.period[lang]}</small></p>
+              <ul>{project.pricing.premium.features.map((f: any) => <li>{f[lang]}</li>)}</ul>
+            </div>
+          </div>
+        </section>
+      )}
+    </div>
+
+    <aside class="detail-side">
+      <dl class="facts">
+        <div>
+          <dt>{t('projects.labels.status')}</dt>
+          <dd><span class:list={['state', status]}>{t(`projects.status.${status}`)}</span></dd>
+        </div>
+        <div>
+          <dt>{t('projects.labels.year')}</dt>
+          <dd>{project.year}</dd>
+        </div>
+        <div>
+          <dt>{t('projects.labels.stack')}</dt>
+          <dd>
+            <ul class="stack-tags">
+              {project.techStack.map((tech: string) => <li>{tech}</li>)}
+            </ul>
+          </dd>
+        </div>
+        {hasLinks && (
+          <div>
+            <dt>{t('projects.labels.links')}</dt>
+            <dd class="fact-links">
+              {links.website && <a href={links.website} target="_blank" rel="noopener">{links.website.replace(/^https?:\/\//, '')}</a>}
+              {links.download && <a href={links.download} target="_blank" rel="noopener">Chrome Web Store</a>}
+              {links.github && <a href={links.github} target="_blank" rel="noopener">GitHub</a>}
+            </dd>
+          </div>
+        )}
+      </dl>
+
+      <section class="timeline" aria-label={t('projects.labels.timeline')}>
+        <h2 class="facts-title">{t('projects.labels.timeline')}</h2>
+        <ol>
+          {project.developmentStatus.map((s: any) => (
+            <li class:list={[s.state || (s.completed ? 'completed' : 'pending')]}>
+              <span class="tl-mark" aria-hidden="true"></span>
+              <span class="tl-title">{s.title[lang]}</span>
+              <span class="tl-text">{s.description[lang]}</span>
+            </li>
+          ))}
+        </ol>
+      </section>
+    </aside>
+  </div>
+
+  <footer class="detail-actions">
+    <div class="actions">
+      {links.website && <a href={links.website} class="btn primary" target="_blank" rel="noopener">{t('projects.labels.website')}</a>}
+      {links.download && <a href={links.download} class:list={['btn', { primary: !links.website }]} target="_blank" rel="noopener">{t('projects.labels.download')}</a>}
+      <a href="mailto:contact@ivankniazev.dev" class="btn">{t('projects.labels.updates')}</a>
+    </div>
+    <a href={getLocalizedPath(`/projects/${next.slug}`, lang)} class="next-link" style={`--accent: ${next.accent}`}>
+      <span class="eyebrow">{t('projects.labels.next')}</span>
+      <span class="next-name">{next.title[lang]} →</span>
+    </a>
+  </footer>
+</article>

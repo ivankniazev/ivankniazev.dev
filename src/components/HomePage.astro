@@ -1,0 +1,91 @@
+---
+import ProjectCard from './ProjectCard.astro';
+import { useTranslations, getLocalizedPath, type Lang } from '../utils/i18n';
+import projectsData from '../data/projects.json';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const featured = projectsData.filter((p) => p.featured);
+const rest = projectsData.filter((p) => !p.featured && (p.status || 'released') === 'released');
+
+// Technology counts across every project's stack.
+const counts = new Map<string, number>();
+for (const p of projectsData) {
+  const seen = new Set<string>();
+  for (const tech of [...p.tech, ...p.techStack]) {
+    const key = tech.split(' (')[0].split(' / ')[0].trim();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    counts.set(key, (counts.get(key) || 0) + 1);
+  }
+}
+const stack = [...counts.entries()]
+  .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+  .slice(0, 18);
+---
+
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">{t('home.eyebrow')}</p>
+    <h1 class="display">{t('home.headline')}</h1>
+    <p class="lede">{t('home.lede')}</p>
+    <div class="actions">
+      <a href={getLocalizedPath('/projects', lang)} class="btn primary">{t('home.viewProjects')}</a>
+      <a href="mailto:contact@ivankniazev.dev" class="btn">{t('home.contactMe')}</a>
+    </div>
+  </div>
+
+  <aside class="ledger" aria-labelledby="ledger-title">
+    <div class="ledger-head">
+      <h2 id="ledger-title">{t('home.ledgerTitle')}</h2>
+      <span>{t('home.ledgerHint')}</span>
+    </div>
+    <ol class="ledger-list">
+      {projectsData.map((p) => {
+        const status = p.status || 'released';
+        return (
+          <li style={`--accent: ${p.accent}`}>
+            <a href={getLocalizedPath(`/projects/${p.slug}`, lang)}>
+              <span class="ledger-year">{p.year}</span>
+              <span class="ledger-name">{p.title[lang]}</span>
+              <span class="ledger-domain">{p.domain[lang]}</span>
+              <span class:list={['ledger-state', status]}>{t(`projects.status.${status}`)}</span>
+            </a>
+          </li>
+        );
+      })}
+    </ol>
+  </aside>
+</section>
+
+<section class="section">
+  <h2 class="section-title">
+    <span>{t('home.featuredTitle')}</span>
+    <a href={getLocalizedPath('/projects', lang)} class="section-link">{t('home.viewProjects')} →</a>
+  </h2>
+  <div class="card-grid">
+    {featured.map((project) => (
+      <ProjectCard project={project} lang={lang} featured={true} />
+    ))}
+    {rest.map((project) => (
+      <ProjectCard project={project} lang={lang} />
+    ))}
+  </div>
+</section>
+
+<section class="section stack" aria-labelledby="stack-title">
+  <h2 class="section-title" id="stack-title">
+    <span>{t('home.stackTitle')}</span>
+    <span class="section-hint">{t('home.stackHint')}</span>
+  </h2>
+  <ul class="stack-list">
+    {stack.map(([name, n]) => (
+      <li><span>{name}</span><span class="stack-count">×{n}</span></li>
+    ))}
+  </ul>
+</section>

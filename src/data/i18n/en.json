@@ -10,14 +10,47 @@
     "title": "Ivan Kniazev",
     "subtitle": "Software Developer & Problem Solver",
     "description": "Passionate about creating efficient solutions and building tools that make a difference. Focused on web development, browser extensions, and user experience.",
-    "viewProjects": "View Projects",
-    "contactMe": "Contact Me",
-    "skillsTitle": "Skills & Technologies"
+    "viewProjects": "All projects",
+    "contactMe": "Write to me",
+    "skillsTitle": "Skills & Technologies",
+    "eyebrow": "Ivan Kniazev · software developer",
+    "headline": "Tools I needed, so I built them.",
+    "lede": "Browser extensions, a music transcription model, a Serbian course, and a fairy tale that listens to a child reading. Each one started as a problem in my own week.",
+    "ledgerTitle": "Index",
+    "ledgerHint": "Every project, newest first",
+    "featuredTitle": "Selected work",
+    "stackTitle": "What they are built with",
+    "stackHint": "Counted across all projects"
   },
   "projects": {
     "title": "My Projects",
-    "description": "A collection of tools and applications I've built to solve real-world problems.",
-    "learnMore": "Learn More"
+    "description": "Nine projects across browser extensions, music, language learning and privacy. Released ones link to the live product.",
+    "learnMore": "Learn More",
+    "status": {
+      "released": "Released",
+      "beta": "Beta",
+      "prototype": "Prototype",
+      "in-development": "In development"
+    },
+    "labels": {
+      "status": "Status",
+      "year": "Year",
+      "domain": "Area",
+      "stack": "Stack",
+      "links": "Links",
+      "overview": "Overview",
+      "features": "What it does",
+      "useCases": "Who it is for",
+      "timeline": "Progress",
+      "pricing": "Pricing",
+      "free": "Free",
+      "premium": "Premium",
+      "website": "Open website",
+      "download": "Get the extension",
+      "updates": "Get updates",
+      "back": "All projects",
+      "next": "Next project"
+    }
   },
   "footer": {
     "copyright": "© 2025 Ivan Kniazev. All rights reserved.",
