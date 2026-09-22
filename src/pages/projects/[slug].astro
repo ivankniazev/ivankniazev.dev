@@ -11,6 +11,14 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props;
 const lang = 'en';
+const statusLabels: Record<string, { en: string; ru: string }> = {
+  released: { en: 'Released', ru: 'Выпущено' },
+  beta: { en: 'Beta', ru: 'Бета' },
+  prototype: { en: 'Prototype', ru: 'Прототип' },
+  'in-development': { en: 'In Development', ru: 'В разработке' },
+};
+const projectStatus = project.status || 'released';
+const statusLabel = (statusLabels[projectStatus] || statusLabels.released)[lang];
 ---
 
 <Layout title={`${project.title[lang]} - Ivan Kniazev`} lang={lang}>
@@ -18,8 +26,8 @@ const lang = 'en';
     <div class="project-header">
       <h1>{project.title[lang]}</h1>
       <div class="project-meta">
-        <span class="project-status">
-          {lang === 'en' ? 'Released' : 'Выпущено'}
+        <span class:list={['project-status', projectStatus]}>
+          {statusLabel}
         </span>
         <span class="project-date">{project.year}</span>
       </div>
@@ -71,7 +79,7 @@ const lang = 'en';
       <h2>{lang === 'en' ? 'Development Status' : 'Статус разработки'}</h2>
       <div class="status-timeline">
         {project.developmentStatus.map((status: any) => (
-          <div class:list={['status-item', { completed: status.completed }]}>
+          <div class:list={['status-item', status.state || (status.completed ? 'completed' : 'pending')]}>
             <h4>{status.title[lang]}</h4>
             <p>{status.description[lang]}</p>
           </div>
@@ -113,8 +121,13 @@ const lang = 'en';
 
     <div class="project-actions">
       <div class="action-buttons">
+        {project.links.website && (
+          <a href={project.links.website} class="btn primary" target="_blank" rel="noopener">
+            {lang === 'en' ? 'Open Website' : 'Открыть сайт'}
+          </a>
+        )}
         {project.links.download && (
-          <a href={project.links.download} class="btn primary" target="_blank">
+          <a href={project.links.download} class:list={['btn', project.links.website ? 'secondary' : 'primary']} target="_blank" rel="noopener">
             {lang === 'en' ? 'Download Extension' : 'Скачать расширение'}
           </a>
         )}

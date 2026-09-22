@@ -7,6 +7,12 @@ interface Props {
 }
 
 const { project, lang } = Astro.props;
+const badgeLabels: Record<string, { en: string; ru: string }> = {
+  beta: { en: 'Beta', ru: 'Бета' },
+  prototype: { en: 'Prototype', ru: 'Прототип' },
+  'in-development': { en: 'In Development', ru: 'В разработке' },
+};
+const badge = badgeLabels[project.status];
 ---
 
 <div class="project-card">
@@ -18,7 +24,10 @@ const { project, lang } = Astro.props;
     )}
   </div>
   <div class="project-content">
-    <h3>{project.title[lang]}</h3>
+    <h3>
+      {project.title[lang]}
+      {badge && <span class:list={['status-badge', project.status]}>{badge[lang]}</span>}
+    </h3>
     <p class="project-description">
       {project.shortDescription[lang]}
     </p>

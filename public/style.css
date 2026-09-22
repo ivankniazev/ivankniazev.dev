@@ -357,6 +357,34 @@ main {
     font-weight: 500;
 }
 
+.project-status.beta,
+.project-status.prototype {
+    background: #fff8e1;
+    color: #7a5a00;
+}
+
+.project-status.in-development {
+    background: #e8f0fe;
+    color: #1a4fa3;
+}
+
+.status-badge {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0.1rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    vertical-align: middle;
+    background: #fff8e1;
+    color: #7a5a00;
+}
+
+.status-badge.in-development {
+    background: #e8f0fe;
+    color: #1a4fa3;
+}
+
 .project-overview {
     margin-bottom: 3rem;
 }

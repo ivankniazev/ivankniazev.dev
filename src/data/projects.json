@@ -1,5 +1,1157 @@
 [
   {
+    "id": "living-tales",
+    "slug": "living-tales",
+    "icon": "📖",
+    "image": "/images/projects/living-tales.png",
+    "title": {
+      "en": "Living Tales",
+      "ru": "Живые сказки"
+    },
+    "shortDescription": {
+      "en": "An interactive fairy tale that comes alive as you read aloud: speech is recognized right in the browser and triggers animations at the right moment.",
+      "ru": "Интерактивная сказка, которая оживает, пока вы читаете вслух: речь распознаётся прямо в браузере и запускает анимации в нужный момент."
+    },
+    "tech": [
+      "JavaScript",
+      "Vosk",
+      "Web Audio",
+      "Cloudflare Pages"
+    ],
+    "status": "prototype",
+    "year": 2026,
+    "overview": {
+      "en": "I was reading a bedtime book to my son and thought: what if the pictures reacted to my voice? Living Tales is that idea turned into a prototype. You read a fairy tale aloud, the microphone listens, and as soon as you reach a key line the scene animates: the bun rolls away exactly when you finish the sentence. Speech recognition runs entirely on the device with Vosk, so nothing is sent to a server. The first tale is the Russian classic Kolobok; it also works without a microphone by tapping the underlined phrases.",
+      "ru": "Читал сыну книжку и подумал: а что, если картинки будут реагировать на голос? «Живые сказки» — это та самая идея в виде прототипа. Вы читаете сказку вслух, микрофон слушает, и как только вы доходите до ключевой строки, сцена оживает: колобок катится ровно тогда, когда вы дочитали фразу. Распознавание речи работает целиком на устройстве через Vosk, ничего не отправляется на сервер. Первая сказка — «Колобок»; без микрофона тоже работает: достаточно нажимать на подчёркнутые фразы."
+    },
+    "techStack": [
+      "JavaScript",
+      "Vosk (offline speech recognition)",
+      "WebAssembly",
+      "Web Audio API",
+      "CSS animations",
+      "Cloudflare Pages",
+      "AI-generated illustrations"
+    ],
+    "features": [
+      {
+        "title": {
+          "en": "Voice-Driven Animations",
+          "ru": "Анимации от голоса"
+        },
+        "description": {
+          "en": "The picture follows your reading: each key phrase triggers its own animation the moment you say it.",
+          "ru": "Картинка идёт за вашим чтением: каждая ключевая фраза запускает свою анимацию в момент, когда вы её произносите."
+        }
+      },
+      {
+        "title": {
+          "en": "Fully On-Device",
+          "ru": "Полностью на устройстве"
+        },
+        "description": {
+          "en": "Speech is recognized in the browser with Vosk; audio never leaves the device.",
+          "ru": "Речь распознаётся в браузере через Vosk; звук никуда не уходит с устройства."
+        }
+      },
+      {
+        "title": {
+          "en": "Page Vocabulary",
+          "ru": "Словарь страницы"
+        },
+        "description": {
+          "en": "Recognition is constrained to the words of the current page, which makes it far more accurate for a child's reading pace.",
+          "ru": "Распознавание ограничено словами текущей страницы, поэтому оно заметно точнее при детском темпе чтения."
+        }
+      },
+      {
+        "title": {
+          "en": "Works Without a Microphone",
+          "ru": "Работает без микрофона"
+        },
+        "description": {
+          "en": "Tap the underlined phrases to trigger the same animations, plus a full-screen reading mode for phones.",
+          "ru": "Нажимайте подчёркнутые фразы, чтобы запустить те же анимации; есть полноэкранный режим чтения для телефона."
+        }
+      }
+    ],
+    "developmentStatus": [
+      {
+        "title": {
+          "en": "Idea & Prototype",
+          "ru": "Идея и прототип"
+        },
+        "description": {
+          "en": "Concept born from reading with my son; first working prototype built in an evening.",
+          "ru": "Идея родилась во время чтения с сыном; первый рабочий прототип собран за вечер."
+        },
+        "completed": true,
+        "state": "completed"
+      },
+      {
+        "title": {
+          "en": "Kolobok",
+          "ru": "Колобок"
+        },
+        "description": {
+          "en": "The first tale with 14 illustrated pages and voice-triggered animations is live.",
+          "ru": "Первая сказка: 14 иллюстрированных страниц и анимации по голосу уже доступны."
+        },
+        "completed": true,
+        "state": "completed"
+      },
+      {
+        "title": {
+          "en": "More Tales",
+          "ru": "Больше сказок"
+        },
+        "description": {
+          "en": "Adding new stories and improving recognition for young readers.",
+          "ru": "Добавление новых сказок и улучшение распознавания для маленьких читателей."
+        },
+        "completed": false,
+        "state": "in-progress"
+      }
+    ],
+    "links": {
+      "website": "https://zhivye-skazki.pages.dev",
+      "download": null,
+      "github": null
+    }
+  },
+  {
+    "id": "srpski-korak",
+    "slug": "srpski-korak",
+    "icon": "🇷🇸",
+    "image": "/images/projects/srpski-korak.png",
+    "title": {
+      "en": "Srpski Korak",
+      "ru": "Srpski Korak (Српски корак по корак)"
+    },
+    "shortDescription": {
+      "en": "A Serbian language course from A0 to C1 with a built-in trainer: 45 modules, spaced repetition, dialogues, audio, and immersive situation lessons.",
+      "ru": "Курс сербского языка от A0 до C1 с тренажёром: 45 модулей, интервальное повторение, диалоги, озвучка и погружающие уроки-ситуации."
+    },
+    "tech": [
+      "JavaScript",
+      "Cloudflare Workers",
+      "D1",
+      "PWA"
+    ],
+    "status": "released",
+    "year": 2026,
+    "overview": {
+      "en": "Srpski Korak (“Serbian step by step”) grew out of my own move to Serbia and the need to actually speak the language. It is a complete course from A0 to C1 built as a route map: the course is a line, each module a station. Inside are 4,000+ words, 1,000+ expressions, 255 grammar blocks and 105 dialogues compiled from four textbooks, all wrapped in a trainer with spaced repetition, XP and a weekly schedule. Modules A0–A2 are free; B1–C1 unlock with a one-time purchase. The whole app runs as a single Cloudflare Worker that serves the static files and the API, with progress stored in D1 after signing in with Google or Apple. It also installs as a PWA and works offline.",
+      "ru": "«Српски корак по корак» вырос из моего переезда в Сербию и потребности реально заговорить на языке. Это полный курс от A0 до C1, построенный как маршрут: курс — линия, модуль — станция. Внутри 4000+ слов, 1000+ выражений, 255 грамматических блоков и 105 диалогов, собранных из четырёх учебников, и всё это обёрнуто в тренажёр с интервальным повторением, XP и расписанием недели. Модули A0–A2 бесплатные, B1–C1 открываются разовой покупкой. Всё приложение работает как один Cloudflare Worker, который раздаёт статику и держит API, прогресс хранится в D1 после входа через Google или Apple. Устанавливается как PWA и работает офлайн."
+    },
+    "techStack": [
+      "JavaScript",
+      "Cloudflare Workers",
+      "Cloudflare D1",
+      "Sign in with Google / Apple",
+      "Service Worker (PWA)",
+      "Web Share API",
+      "Telegram Stars payments",
+      "OpenRouter / Azure TTS"
+    ],
+    "features": [
+      {
+        "title": {
+          "en": "Route-Map Course",
+          "ru": "Курс-маршрут"
+        },
+        "description": {
+          "en": "45 stations from the alphabet to C1, each with grammar, vocabulary and dialogues.",
+          "ru": "45 станций от азбуки до C1, в каждой грамматика, слова и диалоги."
+        }
+      },
+      {
+        "title": {
+          "en": "Spaced Repetition Trainer",
+          "ru": "Тренажёр с интервальным повторением"
+        },
+        "description": {
+          "en": "Words come back exactly when you are about to forget them; XP and streaks keep you on schedule.",
+          "ru": "Слова возвращаются ровно тогда, когда вы вот-вот их забудете; XP и серии дней держат в расписании."
+        }
+      },
+      {
+        "title": {
+          "en": "Kafana: Learning Without Translation",
+          "ru": "Кафана: обучение без перевода"
+        },
+        "description": {
+          "en": "An immersive situation lesson: you are in a Serbian café, nobody translates, you order coffee using only the words you hear.",
+          "ru": "Погружающий урок-ситуация: вы в сербском кафе, никто не переводит, вы заказываете кофе только теми словами, которые услышали."
+        }
+      },
+      {
+        "title": {
+          "en": "Audio for Every Line",
+          "ru": "Озвучка каждой строки"
+        },
+        "description": {
+          "en": "Every phrase has a native-sounding audio clip; Latin and Cyrillic scripts can be switched at any time.",
+          "ru": "У каждой фразы есть аудио; латиницу и кириллицу можно переключать в любой момент."
+        }
+      },
+      {
+        "title": {
+          "en": "Offline-First PWA",
+          "ru": "Офлайн-PWA"
+        },
+        "description": {
+          "en": "Install it as an app; the course, audio and fonts are cached for use without a connection.",
+          "ru": "Устанавливается как приложение; курс, озвучка и шрифты кешируются для работы без сети."
+        }
+      },
+      {
+        "title": {
+          "en": "Share Your Progress",
+          "ru": "Делитесь прогрессом"
+        },
+        "description": {
+          "en": "A 1080×1920 share card is rendered on canvas and sent through the Web Share API.",
+          "ru": "Карточка 1080×1920 рисуется на canvas и отправляется через Web Share API."
+        }
+      }
+    ],
+    "useCases": [
+      {
+        "title": {
+          "en": "Newcomers to Serbia",
+          "ru": "Переехавшим в Сербию"
+        },
+        "description": {
+          "en": "Start from zero and reach everyday fluency with a clear route.",
+          "ru": "Начать с нуля и дойти до бытовой уверенности по понятному маршруту."
+        }
+      },
+      {
+        "title": {
+          "en": "Self-Learners",
+          "ru": "Самоучкам"
+        },
+        "description": {
+          "en": "A full textbook, dictionary and trainer in one app, free up to A2.",
+          "ru": "Учебник, словарь и тренажёр в одном приложении, бесплатно до A2."
+        }
+      }
+    ],
+    "developmentStatus": [
+      {
+        "title": {
+          "en": "Course Content",
+          "ru": "Контент курса"
+        },
+        "description": {
+          "en": "Four textbooks compiled into 45 modules with grammar, vocabulary and dialogues.",
+          "ru": "Четыре учебника собраны в 45 модулей с грамматикой, словами и диалогами."
+        },
+        "completed": true,
+        "state": "completed"
+      },
+      {
+        "title": {
+          "en": "Trainer & Sync",
+          "ru": "Тренажёр и синхронизация"
+        },
+        "description": {
+          "en": "SRS, XP, weekly goals, Google/Apple sign-in and progress sync via D1.",
+          "ru": "SRS, XP, недельные цели, вход через Google/Apple и синхронизация прогресса через D1."
+        },
+        "completed": true,
+        "state": "completed"
+      },
+      {
+        "title": {
+          "en": "Release",
+          "ru": "Релиз"
+        },
+        "description": {
+          "en": "Live at srpskikorak.com as a PWA; A0–A2 free, B1–C1 paid.",
+          "ru": "Доступен на srpskikorak.com как PWA; A0–A2 бесплатно, B1–C1 платно."
+        },
+        "completed": true,
+        "state": "completed"
+      },
+      {
+        "title": {
+          "en": "Situation Lessons",
+          "ru": "Уроки-ситуации"
+        },
+        "description": {
+          "en": "Kafana is the first of a series of immersive practice scenes; more are on the way.",
+          "ru": "«Кафана» — первая из серии погружающих сцен для практики; будут ещё."
+        },
+        "completed": false,
+        "state": "in-progress"
+      }
+    ],
+    "pricing": {
+      "free": {
+        "price": {
+          "en": "$0",
+          "ru": "0 $"
+        },
+        "period": {
+          "en": "forever",
+          "ru": "навсегда"
+        },
+        "features": [
+          {
+            "en": "Modules 0–23 (A0–A2)",
+            "ru": "Модули 0–23 (A0–A2)"
+          },
+          {
+            "en": "Trainer, dictionary, audio",
+            "ru": "Тренажёр, словарь, озвучка"
+          },
+          {
+            "en": "Progress sync",
+            "ru": "Синхронизация прогресса"
+          }
+        ]
+      },
+      "premium": {
+        "price": {
+          "en": "One-time",
+          "ru": "Разово"
+        },
+        "period": {
+          "en": "purchase",
+          "ru": "покупка"
+        },
+        "features": [
+          {
+            "en": "Modules 24–44 (B1–C1)",
+            "ru": "Модули 24–44 (B1–C1)"
+          },
+          {
+            "en": "All free features",
+            "ru": "Все бесплатные функции"
+          },
+          {
+            "en": "Lifetime access",
+            "ru": "Доступ навсегда"
+          }
+        ]
+      }
+    },
+    "links": {
+      "website": "https://srpskikorak.com",
+      "download": null,
+      "github": null
+    }
+  },
+  {
+    "id": "drum-analyzer",
+    "slug": "drum-analyzer",
+    "icon": "🥁",
+    "image": "/images/projects/drum-analyzer.png",
+    "title": {
+      "en": "DrumAnalyzer",
+      "ru": "DrumAnalyzer"
+    },
+    "shortDescription": {
+      "en": "Upload a song and get the drum part written down in standard notation, with playback, looping, practice levels and MIDI/MusicXML export.",
+      "ru": "Загрузите песню и получите барабанную партию в стандартной нотации: с воспроизведением, лупами, уровнями сложности и экспортом в MIDI/MusicXML."
+    },
+    "tech": [
+      ".NET",
+      "Python",
+      "PyTorch",
+      "Music AI"
+    ],
+    "status": "released",
+    "year": 2026,
+    "overview": {
+      "en": "I am a drummer and a developer, and transcribing a drum part by ear is an evening of work. DrumAnalyzer answers a simple question: can AI build a playable drum score from an MP3? It turned out the best open model was licensed for non-commercial use only, so I trained my own: a network that separates the drums from the mix, finds every hit and lays the part out bar by bar. The web app gives you a score or a step grid, a cursor that follows the original recording, bar looping, a metronome locked to the song's own tempo, and simplification levels from a bare pulse to the part as recorded. Results export to MIDI and MusicXML. Repeat uploads are cached by file hash and answer instantly.",
+      "ru": "Я барабанщик и разработчик, и снять партию ударных на слух — это вечер работы. DrumAnalyzer отвечает на простой вопрос: может ли AI построить играбельную барабанную партитуру из MP3? Оказалось, что лучшая открытая модель лицензирована только для некоммерческого использования, поэтому я обучил свою: сеть отделяет барабаны от микса, находит каждый удар и раскладывает партию по тактам. Веб-приложение показывает партитуру или клеточную сетку, курсор бежит по оригинальной записи, такты можно зациклить, метроном привязан к темпу самой песни, а уровни упрощения ведут от голого пульса до партии как в записи. Результат экспортируется в MIDI и MusicXML. Повторные загрузки кешируются по хешу файла и отвечают мгновенно."
+    },
+    "techStack": [
+      "C# / .NET 9",
+      "ASP.NET Core",
+      "Python",
+      "PyTorch",
+      "Demucs (source separation)",
+      "Custom drum transcription model",
+      "Docker",
+      "Google Sign-In",
+      "Caddy"
+    ],
+    "features": [
+      {
+        "title": {
+          "en": "Automatic Transcription",
+          "ru": "Автоматическая транскрипция"
+        },
+        "description": {
+          "en": "A neural network isolates the drums, detects every hit and writes the part in standard drum notation.",
+          "ru": "Нейросеть выделяет барабаны, находит каждый удар и записывает партию в стандартной барабанной нотации."
+        }
+      },
+      {
+        "title": {
+          "en": "Play Along",
+          "ru": "Играйте вместе с записью"
+        },
+        "description": {
+          "en": "A cursor runs through the score in time with the original song; loop any bars and slow things down.",
+          "ru": "Курсор бежит по нотам в такт оригинальной песне; любые такты можно зациклить."
+        }
+      },
+      {
+        "title": {
+          "en": "Practice Levels",
+          "ru": "Уровни для практики"
+        },
+        "description": {
+          "en": "Simplify the part from a bare pulse to the full recorded groove and grow into it step by step.",
+          "ru": "Упрощайте партию от голого пульса до полного грува из записи и растите в неё шаг за шагом."
+        }
+      },
+      {
+        "title": {
+          "en": "Own Trained Model",
+          "ru": "Собственная обученная модель"
+        },
+        "description": {
+          "en": "Trained on real music rather than synthetic drums after synthetic datasets failed to generalize; benchmarked against the open reference.",
+          "ru": "Обучена на реальной музыке, а не синтетике, после того как синтетические датасеты не обобщились; сравнена с открытым эталоном по бенчмарку."
+        }
+      },
+      {
+        "title": {
+          "en": "Export",
+          "ru": "Экспорт"
+        },
+        "description": {
+          "en": "Download the result as MIDI or MusicXML for your notation software or DAW.",
+          "ru": "Скачивайте результат в MIDI или MusicXML для нотного редактора или DAW."
+        }
+      },
+      {
+        "title": {
+          "en": "Fast Repeats",
+          "ru": "Быстрые повторы"
+        },
+        "description": {
+          "en": "Results are cached by file hash: a song already processed answers in about 100 ms.",
+          "ru": "Результаты кешируются по хешу файла: уже обработанная песня отвечает примерно за 100 мс."
+        }
+      }
+    ],
+    "useCases": [
+      {
+        "title": {
+          "en": "Drummers",
+          "ru": "Барабанщикам"
+        },
+        "description": {
+          "en": "Learn a song from the actual record instead of guessing by ear.",
+          "ru": "Учить песню по реальной записи, а не на слух наугад."
+        }
+      },
+      {
+        "title": {
+          "en": "Teachers",
+          "ru": "Преподавателям"
+        },
+        "description": {
+          "en": "Hand students a readable, simplified part for any track.",
+          "ru": "Давать ученикам читаемую, упрощённую партию для любого трека."
+        }
+      }
+    ],
+    "developmentStatus": [
+      {
+        "title": {
+          "en": "Research",
+          "ru": "Исследование"
+        },
+        "description": {
+          "en": "Evaluated open models, hit a licensing dead end, ran data experiments and trained a custom model.",
+          "ru": "Оценка открытых моделей, лицензионный тупик, эксперименты с данными и обучение собственной модели."
+        },
+        "completed": true,
+        "state": "completed"
+      },
+      {
+        "title": {
+          "en": "Web App",
+          "ru": "Веб-приложение"
+        },
+        "description": {
+          "en": "Upload queue, private result links, score/grid player, practice levels and export.",
+          "ru": "Очередь загрузок, приватные ссылки на результат, плеер с нотами/сеткой, уровни практики и экспорт."
+        },
+        "completed": true,
+        "state": "completed"
+      },
+      {
+        "title": {
+          "en": "Release",
+          "ru": "Релиз"
+        },
+        "description": {
+          "en": "Live at drumanalyzer.com with a 30-second preview without an account and full songs after sign-in.",
+          "ru": "Доступен на drumanalyzer.com: 30-секундное превью без аккаунта и целые песни после входа."
+        },
+        "completed": true,
+        "state": "completed"
+      },
+      {
+        "title": {
+          "en": "Model Improvements",
+          "ru": "Улучшение модели"
+        },
+        "description": {
+          "en": "Ongoing work on accuracy for cymbals and complex grooves.",
+          "ru": "Продолжается работа над точностью для тарелок и сложных грувов."
+        },
+        "completed": false,
+        "state": "in-progress"
+      }
+    ],
+    "links": {
+      "website": "https://drumanalyzer.com",
+      "download": null,
+      "github": null
+    }
+  },
+  {
+    "id": "chromeniche",
+    "slug": "chromeniche",
+    "icon": "🧩",
+    "image": "/images/projects/chromeniche.png",
+    "title": {
+      "en": "ChromeNiche",
+      "ru": "ChromeNiche"
+    },
+    "shortDescription": {
+      "en": "Validate a Chrome extension idea before building it: a BUILD / TEST / SKIP verdict backed by data from 261,000+ extensions in the Chrome Web Store.",
+      "ru": "Проверьте идею Chrome-расширения до того, как её делать: вердикт BUILD / TEST / SKIP на основе данных о 261 000+ расширений из Chrome Web Store."
+    },
+    "tech": [
+      "Python",
+      "FastAPI",
+      "Next.js",
+      "Supabase"
+    ],
+    "status": "released",
+    "year": 2026,
+    "overview": {
+      "en": "After shipping several Chrome extensions I kept asking the same question before each new one: is this niche already crowded? ChromeNiche answers it in seconds. Describe an idea, and the service searches a continuously synced index of the whole Chrome Web Store, scores the niche on six dimensions (competition, install counts, ratings, demand signals and more) and returns an honest verdict: BUILD, TEST or SKIP, with AI-written reasoning and next steps. A Discover mode fans out broad queries to surface underserved niches. The data pipeline runs weekly on GitHub Actions with semantic search over vector embeddings, and there is a companion Chrome extension that shows the verdict right on any store listing.",
+      "ru": "После нескольких выпущенных Chrome-расширений я перед каждым новым задавал один и тот же вопрос: не занята ли уже эта ниша? ChromeNiche отвечает на него за секунды. Опишите идею, и сервис ищет по постоянно обновляемому индексу всего Chrome Web Store, оценивает нишу по шести измерениям (конкуренция, установки, рейтинги, сигналы спроса и другое) и выдаёт честный вердикт: BUILD, TEST или SKIP, с объяснением от AI и следующими шагами. Режим Discover разворачивает широкие запросы, чтобы находить недообслуженные ниши. Пайплайн данных работает еженедельно на GitHub Actions с семантическим поиском по векторным эмбеддингам, а сопутствующее Chrome-расширение показывает вердикт прямо на странице любого расширения в магазине."
+    },
+    "techStack": [
+      "Python 3.11",
+      "FastAPI",
+      "Next.js 16 / React 19",
+      "TypeScript",
+      "Tailwind CSS",
+      "Supabase (auth, DB, vector search)",
+      "OpenRouter",
+      "Google Cloud Run",
+      "GitHub Actions",
+      "Lemon Squeezy"
+    ],
+    "features": [
+      {
+        "title": {
+          "en": "Instant Market Verdict",
+          "ru": "Мгновенный вердикт по рынку"
+        },
+        "description": {
+          "en": "BUILD, TEST or SKIP with a six-dimensional score behind it.",
+          "ru": "BUILD, TEST или SKIP с шестимерной оценкой за ним."
+        }
+      },
+      {
+        "title": {
+          "en": "Real Store Data",
+          "ru": "Реальные данные магазина"
+        },
+        "description": {
+          "en": "261,000+ extensions indexed and refreshed weekly, not guesses from a language model.",
+          "ru": "261 000+ расширений в индексе с еженедельным обновлением, а не догадки языковой модели."
+        }
+      },
+      {
+        "title": {
+          "en": "AI Insights",
+          "ru": "AI-выводы"
+        },
+        "description": {
+          "en": "Why the verdict is what it is, what competitors miss and what an MVP should include.",
+          "ru": "Почему вердикт такой, чего не хватает конкурентам и что должно быть в MVP."
+        }
+      },
+      {
+        "title": {
+          "en": "Discover Mode",
+          "ru": "Режим Discover"
+        },
+        "description": {
+          "en": "Broad-query fan-out that surfaces underserved niches you would not think to search for.",
+          "ru": "Разворот широких запросов, который находит недообслуженные ниши, о которых вы бы не подумали."
+        }
+      },
+      {
+        "title": {
+          "en": "Semantic Search",
+          "ru": "Семантический поиск"
+        },
+        "description": {
+          "en": "Vector embeddings match ideas to existing extensions even when the wording differs.",
+          "ru": "Векторные эмбеддинги сопоставляют идею с существующими расширениями даже при другой формулировке."
+        }
+      },
+      {
+        "title": {
+          "en": "Companion Extension",
+          "ru": "Сопутствующее расширение"
+        },
+        "description": {
+          "en": "See the verdict directly on any Chrome Web Store listing.",
+          "ru": "Смотрите вердикт прямо на странице любого расширения в Chrome Web Store."
+        }
+      }
+    ],
+    "useCases": [
+      {
+        "title": {
+          "en": "Indie Developers",
+          "ru": "Инди-разработчикам"
+        },
+        "description": {
+          "en": "Check a niche in seconds before spending weeks on a build.",
+          "ru": "Проверить нишу за секунды до того, как потратить недели на разработку."
+        }
+      },
+      {
+        "title": {
+          "en": "Product Teams",
+          "ru": "Продуктовым командам"
+        },
+        "description": {
+          "en": "Back a go/no-go decision with store-wide competition data.",
+          "ru": "Подкрепить решение go/no-go данными о конкуренции по всему магазину."
+        }
+      }
+    ],
+    "developmentStatus": [
+      {
+        "title": {
+          "en": "Data Pipeline",
+          "ru": "Пайплайн данных"
+        },
+        "description": {
+          "en": "Full Chrome Web Store crawl, weekly incremental sync and embedding generation on GitHub Actions.",
+          "ru": "Полный обход Chrome Web Store, еженедельная инкрементальная синхронизация и генерация эмбеддингов на GitHub Actions."
+        },
+        "completed": true,
+        "state": "completed"
+      },
+      {
+        "title": {
+          "en": "Analysis Engine",
+          "ru": "Движок анализа"
+        },
+        "description": {
+          "en": "Six-dimensional scoring, demand estimation and AI-generated insights via OpenRouter.",
+          "ru": "Шестимерная оценка, оценка спроса и AI-выводы через OpenRouter."
+        },
+        "completed": true,
+        "state": "completed"
+      },
+      {
+        "title": {
+          "en": "Release",
+          "ru": "Релиз"
+        },
+        "description": {
+          "en": "Live at chromeniche.com with a Pro plan and a 7-day free trial.",
+          "ru": "Доступен на chromeniche.com с планом Pro и 7-дневным пробным периодом."
+        },
+        "completed": true,
+        "state": "completed"
+      },
+      {
+        "title": {
+          "en": "Discover & Extension",
+          "ru": "Discover и расширение"
+        },
+        "description": {
+          "en": "Discover mode and the companion extension shipped; refining verdict accuracy.",
+          "ru": "Режим Discover и сопутствующее расширение выпущены; уточняется точность вердиктов."
+        },
+        "completed": true,
+        "state": "completed"
+      }
+    ],
+    "pricing": {
+      "free": {
+        "price": {
+          "en": "$0",
+          "ru": "0 $"
+        },
+        "period": {
+          "en": "/month",
+          "ru": "/месяц"
+        },
+        "features": [
+          {
+            "en": "Demo analyses",
+            "ru": "Демо-анализы"
+          },
+          {
+            "en": "Basic market verdict",
+            "ru": "Базовый вердикт по рынку"
+          }
+        ]
+      },
+      "premium": {
+        "price": {
+          "en": "$15",
+          "ru": "15 $"
+        },
+        "period": {
+          "en": "/month",
+          "ru": "/месяц"
+        },
+        "features": [
+          {
+            "en": "Unlimited validations",
+            "ru": "Неограниченные проверки"
+          },
+          {
+            "en": "AI insights & Discover",
+            "ru": "AI-выводы и Discover"
+          },
+          {
+            "en": "Search history",
+            "ru": "История поиска"
+          },
+          {
+            "en": "7-day free trial",
+            "ru": "7 дней бесплатно"
+          }
+        ]
+      }
+    },
+    "links": {
+      "website": "https://chromeniche.com",
+      "download": null,
+      "github": null
+    }
+  },
+  {
+    "id": "pdd-serbia",
+    "slug": "pdd-serbia",
+    "icon": "🚦",
+    "image": null,
+    "title": {
+      "en": "Serbian Road Rules: Interactive Situations",
+      "ru": "ПДД Сербии: интерактивные ситуации"
+    },
+    "shortDescription": {
+      "en": "A mobile textbook prototype where a traffic rule becomes a 2D scene: pick an action, watch the consequences play out, then read the explanation.",
+      "ru": "Прототип мобильного учебника, где правило дорожного движения превращается в 2D-сцену: выбираете действие, смотрите последствия и только потом читаете объяснение."
+    },
+    "tech": [
+      "TypeScript",
+      "React",
+      "Canvas 2D",
+      "Vite"
+    ],
+    "status": "prototype",
+    "year": 2026,
+    "overview": {
+      "en": "Studying for a Serbian driving licence from a 133-page lecture summary, I wanted the rules to be something you experience rather than memorize. In this prototype each rule is a road situation drawn on a 2D canvas: you see the intersection, choose what to do, the scene animates and shows what happens, and only then does the explanation appear. The key difference from a scripted scene is that the outcome is not written in advance. The road is made of lanes, every vehicle has its own route and dynamics, and a collision, a missed obligation or a blocked intersection is derived from what actually happened in the simulation. The author describes the intent (“you turn right from the south, a pedestrian steps onto the crossing”); the solver computes the rest. A build-time check runs every variant and fails if a situation does not have exactly one correct answer.",
+      "ru": "Готовясь к сербским правам по 133-страничному конспекту, я хотел, чтобы правила не заучивались, а проживались. В этом прототипе каждое правило — дорожная ситуация на 2D-холсте: вы видите перекрёсток, выбираете, что делать, сцена анимируется и показывает, что произошло, и только после этого появляется объяснение. Главное отличие от сцены по сценарию в том, что исход не написан заранее. Дорога состоит из полос, у каждой машины свой маршрут и своя динамика, а авария, невыполненная обязанность или перекрытый перекрёсток выводятся из того, что реально случилось в симуляции. Автор описывает намерение («вы с юга поворачиваете направо, пешеход входит на переход»), остальное считает солвер. Проверка при сборке прогоняет все варианты и падает, если у ситуации не ровно один верный ответ."
+    },
+    "techStack": [
+      "TypeScript",
+      "React",
+      "Vite",
+      "Canvas 2D",
+      "Custom traffic solver",
+      "No backend"
+    ],
+    "features": [
+      {
+        "title": {
+          "en": "Learn by Consequence",
+          "ru": "Обучение через последствия"
+        },
+        "description": {
+          "en": "Choose an action and watch what it leads to before reading the rule.",
+          "ru": "Выберите действие и посмотрите, к чему оно приводит, прежде чем читать правило."
+        }
+      },
+      {
+        "title": {
+          "en": "Simulated, Not Scripted",
+          "ru": "Симуляция, а не сценарий"
+        },
+        "description": {
+          "en": "Lanes, routes and vehicle dynamics decide the outcome; violations are detected from what happened.",
+          "ru": "Полосы, маршруты и динамика машин определяют исход; нарушения определяются по тому, что произошло."
+        }
+      },
+      {
+        "title": {
+          "en": "Sourced From the Real Course",
+          "ru": "По реальному курсу"
+        },
+        "description": {
+          "en": "Situations are mapped to pages of the driving-school summary, with a coverage report of the syllabus.",
+          "ru": "Ситуации привязаны к страницам конспекта автошколы, есть отчёт о покрытии программы."
+        }
+      },
+      {
+        "title": {
+          "en": "Mobile-First",
+          "ru": "Сначала мобильный"
+        },
+        "description": {
+          "en": "Designed for a 360–430 px screen and shown as a phone column on desktop.",
+          "ru": "Спроектирован под экран 360–430 px; на десктопе показывается колонкой телефона."
+        }
+      },
+      {
+        "title": {
+          "en": "Verified Answers",
+          "ru": "Проверенные ответы"
+        },
+        "description": {
+          "en": "The build runs every variant and fails unless exactly one option is correct.",
+          "ru": "Сборка прогоняет все варианты и падает, если верный вариант не ровно один."
+        }
+      }
+    ],
+    "developmentStatus": [
+      {
+        "title": {
+          "en": "Course Analysis",
+          "ru": "Разбор курса"
+        },
+        "description": {
+          "en": "Extracted and indexed the driving-school summary; selected rules that can be visualized.",
+          "ru": "Извлечён и проиндексирован конспект автошколы; отобраны правила, которые можно визуализировать."
+        },
+        "completed": true,
+        "state": "completed"
+      },
+      {
+        "title": {
+          "en": "World Engine",
+          "ru": "Движок мира"
+        },
+        "description": {
+          "en": "Lanes, routes, vehicle dynamics and a solver that derives outcomes.",
+          "ru": "Полосы, маршруты, динамика машин и солвер, выводящий исход."
+        },
+        "completed": true,
+        "state": "completed"
+      },
+      {
+        "title": {
+          "en": "First Situations",
+          "ru": "Первые ситуации"
+        },
+        "description": {
+          "en": "Initial set of intersection situations with animated consequences.",
+          "ru": "Первый набор ситуаций на перекрёстках с анимированными последствиями."
+        },
+        "completed": true,
+        "state": "completed"
+      },
+      {
+        "title": {
+          "en": "Public Release",
+          "ru": "Публичный релиз"
+        },
+        "description": {
+          "en": "Expanding coverage of the syllabus before publishing.",
+          "ru": "Расширение покрытия программы перед публикацией."
+        },
+        "completed": false,
+        "state": "pending"
+      }
+    ],
+    "links": {
+      "website": null,
+      "download": null,
+      "github": null
+    }
+  },
+  {
+    "id": "privacy-cleaner",
+    "slug": "privacy-cleaner",
+    "icon": "🛡️",
+    "image": null,
+    "title": {
+      "en": "PrivacyCleaner",
+      "ru": "PrivacyCleaner"
+    },
+    "shortDescription": {
+      "en": "An Android app that scans your gallery, shows what photos and videos reveal about you, and strips that metadata without re-encoding a single pixel.",
+      "ru": "Android-приложение, которое сканирует галерею, показывает, что фото и видео рассказывают о вас, и удаляет эти метаданные, не перекодируя ни одного пикселя."
+    },
+    "tech": [
+      "Kotlin",
+      "Android",
+      "EXIF",
+      "On-device"
+    ],
+    "status": "in-development",
+    "year": 2026,
+    "overview": {
+      "en": "Every photo you share carries more than the picture: GPS coordinates, the exact time and time zone, the phone model and firmware, sometimes people's names and the owner's name from IPTC, and the camera's serial number. PrivacyCleaner scans the gallery, ranks each finding by risk and removes it. Everything happens on the device: the app sends nothing out, and even reverse geocoding uses a built-in database of places. Two things I have not seen elsewhere: it reads the vendor trailer Samsung appends after the end of a JPEG (which leaks the country of the mobile network even with geotagging off), and it clusters coordinates into places you visit regularly, separating a likely home from a likely workplace by time of day. Cleaning never re-encodes the image; only the file structure is rewritten, with care for Ultra HDR gain maps in JPEG, chunks in PNG and WebP, and metadata boxes in MP4/MOV.",
+      "ru": "Каждое фото, которым вы делитесь, несёт больше, чем картинку: GPS-координаты, точное время и часовой пояс, модель телефона и прошивку, иногда имена людей и имя владельца из IPTC, серийный номер камеры. PrivacyCleaner сканирует галерею, оценивает каждую находку по уровню риска и удаляет её. Всё происходит на устройстве: приложение ничего не отправляет наружу, даже обратный геокодинг использует встроенную базу населённых пунктов. Две вещи, которых я не видел у аналогов: чтение вендорного хвоста, который Samsung дописывает после конца JPEG (он выдаёт страну мобильной сети даже при выключенном геотегировании), и кластеризация координат в места, где вы бываете регулярно, с отделением предполагаемого дома от предполагаемой работы по времени суток. При очистке изображение никогда не перекодируется: переписывается только структура файла, с учётом карт яркости Ultra HDR в JPEG, блоков в PNG и WebP и боксов метаданных в MP4/MOV."
+    },
+    "techStack": [
+      "Kotlin",
+      "Android SDK",
+      "Gradle (Kotlin DSL)",
+      "Custom EXIF / IPTC / XMP parsers",
+      "ISOBMFF (MP4/MOV) parser",
+      "Offline geo database"
+    ],
+    "features": [
+      {
+        "title": {
+          "en": "Risk-Ranked Findings",
+          "ru": "Находки по уровню риска"
+        },
+        "description": {
+          "en": "Coordinates, names and serial numbers are high; timestamps and device models medium; color profiles and edit history low.",
+          "ru": "Координаты, имена и серийные номера — высокий; время и модель устройства — средний; цветовые профили и история правок — низкий."
+        }
+      },
+      {
+        "title": {
+          "en": "100% On-Device",
+          "ru": "100% на устройстве"
+        },
+        "description": {
+          "en": "No network access at all, including reverse geocoding.",
+          "ru": "Никакого доступа к сети, включая обратный геокодинг."
+        }
+      },
+      {
+        "title": {
+          "en": "Vendor Trailers",
+          "ru": "Вендорные хвосты"
+        },
+        "description": {
+          "en": "Detects Samsung's SEFH/SEFT container hidden after the JPEG end marker.",
+          "ru": "Находит контейнер SEFH/SEFT Samsung, спрятанный после маркера конца JPEG."
+        }
+      },
+      {
+        "title": {
+          "en": "Geo Analytics",
+          "ru": "Гео-аналитика"
+        },
+        "description": {
+          "en": "Clusters photo locations into regular places and flags likely home and work.",
+          "ru": "Кластеризует места съёмки в регулярные локации и отмечает вероятные дом и работу."
+        }
+      },
+      {
+        "title": {
+          "en": "Lossless Cleaning",
+          "ru": "Очистка без потерь"
+        },
+        "description": {
+          "en": "JPEG, PNG, WebP, MP4, MOV and 3GP are rewritten structurally, never re-encoded.",
+          "ru": "JPEG, PNG, WebP, MP4, MOV и 3GP переписываются структурно, без перекодирования."
+        }
+      }
+    ],
+    "developmentStatus": [
+      {
+        "title": {
+          "en": "Metadata Readers",
+          "ru": "Парсеры метаданных"
+        },
+        "description": {
+          "en": "Custom parsers for EXIF, IPTC, XMP, Samsung trailers and ISOBMFF boxes.",
+          "ru": "Собственные парсеры EXIF, IPTC, XMP, хвостов Samsung и боксов ISOBMFF."
+        },
+        "completed": true,
+        "state": "completed"
+      },
+      {
+        "title": {
+          "en": "Cleaning Engine",
+          "ru": "Движок очистки"
+        },
+        "description": {
+          "en": "Structural rewrite for images and video with Ultra HDR support.",
+          "ru": "Структурная перезапись изображений и видео с поддержкой Ultra HDR."
+        },
+        "completed": true,
+        "state": "completed"
+      },
+      {
+        "title": {
+          "en": "App & Geo Analytics",
+          "ru": "Приложение и гео-аналитика"
+        },
+        "description": {
+          "en": "Gallery scan, risk report, place clustering and cleaned-copy destination folder.",
+          "ru": "Сканирование галереи, отчёт о рисках, кластеризация мест и папка для очищенных копий."
+        },
+        "completed": false,
+        "state": "in-progress"
+      },
+      {
+        "title": {
+          "en": "Google Play Release",
+          "ru": "Релиз в Google Play"
+        },
+        "description": {
+          "en": "Polishing and store listing preparation.",
+          "ru": "Полировка и подготовка страницы в магазине."
+        },
+        "completed": false,
+        "state": "pending"
+      }
+    ],
+    "links": {
+      "website": null,
+      "download": null,
+      "github": null
+    }
+  },
+  {
+    "id": "linkedin-cover-letter",
+    "slug": "linkedin-cover-letter",
+    "icon": "✉️",
+    "image": null,
+    "title": {
+      "en": "LinkedIn Cover Letter",
+      "ru": "LinkedIn Cover Letter"
+    },
+    "shortDescription": {
+      "en": "Chrome extension that writes a tailored cover letter for any LinkedIn job posting from your resume in one click.",
+      "ru": "Chrome-расширение, которое в один клик пишет сопроводительное письмо под любую вакансию LinkedIn на основе вашего резюме."
+    },
+    "tech": [
+      "JavaScript",
+      "Browser Extension",
+      "Python",
+      "AI"
+    ],
+    "status": "released",
+    "year": 2025,
+    "overview": {
+      "en": "Applying for jobs means writing the same cover letter over and over with small changes. This extension does that part for you: open a LinkedIn job posting, click the button, and it combines the job title, company and description with your saved resume to generate a cover letter in the style you choose. The extension talks to a FastAPI backend on Google Cloud Run that calls the model through OpenRouter and tracks usage in PostgreSQL; free users get several generations every two weeks, premium users get unlimited.",
+      "ru": "Поиск работы — это одно и то же сопроводительное письмо снова и снова с небольшими правками. Расширение берёт эту часть на себя: откройте вакансию на LinkedIn, нажмите кнопку, и оно объединит название, компанию и описание вакансии с вашим сохранённым резюме и сгенерирует письмо в выбранном стиле. Расширение общается с бэкендом на FastAPI в Google Cloud Run, который вызывает модель через OpenRouter и ведёт учёт использования в PostgreSQL; бесплатные пользователи получают несколько генераций каждые две недели, премиум — без ограничений."
+    },
+    "techStack": [
+      "JavaScript",
+      "Chrome Extension API",
+      "Manifest V3",
+      "Python",
+      "FastAPI",
+      "PostgreSQL (Supabase)",
+      "OpenRouter",
+      "Google Cloud Run",
+      "GitHub Actions"
+    ],
+    "features": [
+      {
+        "title": {
+          "en": "One-Click Generation",
+          "ru": "Генерация в один клик"
+        },
+        "description": {
+          "en": "Reads the job posting you are on and writes a letter that matches it.",
+          "ru": "Читает открытую вакансию и пишет письмо под неё."
+        }
+      },
+      {
+        "title": {
+          "en": "Based on Your Resume",
+          "ru": "На основе вашего резюме"
+        },
+        "description": {
+          "en": "Save your resume once; every letter is grounded in your real experience.",
+          "ru": "Сохраните резюме один раз; каждое письмо опирается на ваш реальный опыт."
+        }
+      },
+      {
+        "title": {
+          "en": "Multiple Styles",
+          "ru": "Несколько стилей"
+        },
+        "description": {
+          "en": "Professional, friendly or concise, depending on the company.",
+          "ru": "Профессиональный, дружелюбный или краткий, в зависимости от компании."
+        }
+      },
+      {
+        "title": {
+          "en": "Free & Premium",
+          "ru": "Бесплатно и премиум"
+        },
+        "description": {
+          "en": "A free quota every two weeks, unlimited with a subscription.",
+          "ru": "Бесплатная квота каждые две недели, без ограничений по подписке."
+        }
+      }
+    ],
+    "developmentStatus": [
+      {
+        "title": {
+          "en": "Extension",
+          "ru": "Расширение"
+        },
+        "description": {
+          "en": "Content script for LinkedIn job pages, popup UI and resume storage.",
+          "ru": "Контент-скрипт для страниц вакансий LinkedIn, popup-интерфейс и хранение резюме."
+        },
+        "completed": true,
+        "state": "completed"
+      },
+      {
+        "title": {
+          "en": "Backend",
+          "ru": "Бэкенд"
+        },
+        "description": {
+          "en": "FastAPI service with usage tracking, subscription checks and CI/CD to Cloud Run.",
+          "ru": "Сервис на FastAPI с учётом использования, проверкой подписки и CI/CD в Cloud Run."
+        },
+        "completed": true,
+        "state": "completed"
+      },
+      {
+        "title": {
+          "en": "Release",
+          "ru": "Релиз"
+        },
+        "description": {
+          "en": "Published to the Chrome Web Store.",
+          "ru": "Опубликовано в Chrome Web Store."
+        },
+        "completed": true,
+        "state": "completed"
+      }
+    ],
+    "links": {
+      "website": null,
+      "download": "https://chromewebstore.google.com/detail/linkedin-cover-letter/olgpihaalcnfmhbihifndlkkoiacbdlg",
+      "github": null
+    }
+  },
+  {
     "id": "spotify-bpm",
     "slug": "spotify-bpm",
     "icon": "🎵",
@@ -12,7 +1164,12 @@
       "en": "Browser extension that instantly displays the BPM (beats per minute) of any Spotify track. Perfect for DJs, musicians, dancers, and music enthusiasts.",
       "ru": "Расширение браузера, которое мгновенно показывает BPM (ударов в минуту) любого трека Spotify. Идеально для диджеев, музыкантов, танцоров и любителей музыки."
     },
-    "tech": ["JavaScript", "Browser Extension", "Spotify API", "Google Cloud"],
+    "tech": [
+      "JavaScript",
+      "Browser Extension",
+      "Spotify API",
+      "Google Cloud"
+    ],
     "status": "released",
     "year": 2025,
     "overview": {
@@ -132,7 +1289,8 @@
           "en": "Initial concept, API integration planning, and user interface design completed.",
           "ru": "Первоначальная концепция, планирование интеграции API и дизайн пользовательского интерфейса завершены."
         },
-        "completed": true
+        "completed": true,
+        "state": "completed"
       },
       {
         "title": {
@@ -143,7 +1301,8 @@
           "en": "BPM detection, Spotify/Deezer API integration, and Google Cloud backend implementation completed.",
           "ru": "Определение BPM, интеграция API Spotify/Deezer и реализация бэкенда Google Cloud завершены."
         },
-        "completed": true
+        "completed": true,
+        "state": "completed"
       },
       {
         "title": {
@@ -154,7 +1313,8 @@
           "en": "Paddle payment integration, subscription management, and usage tracking system completed.",
           "ru": "Интеграция платежей Paddle, управление подписками и система отслеживания использования завершены."
         },
-        "completed": true
+        "completed": true,
+        "state": "completed"
       },
       {
         "title": {
@@ -165,7 +1325,8 @@
           "en": "Comprehensive testing with multiple music genres and successful Chrome Web Store publication.",
           "ru": "Всестороннее тестирование с различными музыкальными жанрами и успешная публикация в Chrome Web Store."
         },
-        "completed": true
+        "completed": true,
+        "state": "completed"
       }
     ],
     "pricing": {
@@ -219,8 +1380,9 @@
       }
     },
     "links": {
-      "download": "#",
-      "github": null
+      "download": "https://chromewebstore.google.com/detail/spotify-bpm/fcgopiibenibdppldlmopiojcdfagecp",
+      "github": null,
+      "website": null
     }
   },
   {
@@ -236,7 +1398,11 @@
       "en": "Browser extension that allows users to capture high-quality screenshots from YouTube videos with ease.",
       "ru": "Расширение браузера, которое позволяет пользователям легко делать высококачественные скриншоты из видео YouTube."
     },
-    "tech": ["JavaScript", "Browser Extension", "Chrome API"],
+    "tech": [
+      "JavaScript",
+      "Browser Extension",
+      "Chrome API"
+    ],
     "status": "released",
     "year": 2025,
     "overview": {
@@ -303,7 +1469,8 @@
           "en": "Initial concept and user interface design completed.",
           "ru": "Первоначальная концепция и дизайн пользовательского интерфейса завершены."
         },
-        "completed": true
+        "completed": true,
+        "state": "completed"
       },
       {
         "title": {
@@ -314,7 +1481,8 @@
           "en": "Core screenshot functionality and browser integration completed.",
           "ru": "Основной функционал скриншотов и интеграция с браузером завершены."
         },
-        "completed": true
+        "completed": true,
+        "state": "completed"
       },
       {
         "title": {
@@ -325,7 +1493,8 @@
           "en": "Comprehensive testing across different browsers and video formats completed.",
           "ru": "Всестороннее тестирование в различных браузерах и форматах видео завершено."
         },
-        "completed": true
+        "completed": true,
+        "state": "completed"
       },
       {
         "title": {
@@ -336,12 +1505,14 @@
           "en": "Successfully published to Chrome Web Store and available for download.",
           "ru": "Успешно опубликовано в Chrome Web Store и доступно для скачивания."
         },
-        "completed": true
+        "completed": true,
+        "state": "completed"
       }
     ],
     "links": {
       "download": "https://chromewebstore.google.com/detail/youtube-screenshot/fhpjgmfckbkgfhkkjgfajfaeacapeefj?authuser=0&hl=en",
-      "github": null
+      "github": null,
+      "website": null
     }
   }
 ]
