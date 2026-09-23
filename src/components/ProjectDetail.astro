@@ -41,8 +41,14 @@ const site = links.website || links.download || links.github;
       </div>
     </div>
     {project.image && (
-      <div class="cover__shot">
-        <img src={project.image} alt={project.title[lang]} width="760" height="560" decoding="async" />
+      <div class="cover__shot" style={`--shot-w: ${project.imageWidth}px`}>
+        <img
+          src={project.image}
+          alt={project.title[lang]}
+          width={project.imageWidth}
+          height={project.imageHeight}
+          decoding="async"
+        />
       </div>
     )}
   </header>

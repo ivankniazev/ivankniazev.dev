@@ -3,7 +3,9 @@
     "id": "living-tales",
     "slug": "living-tales",
     "icon": "📖",
-    "image": "/images/projects/living-tales.png",
+    "image": "/images/projects/living-tales.webp",
+    "imageWidth": 760,
+    "imageHeight": 560,
     "title": {
       "en": "Living Tales",
       "ru": "Живые сказки"
@@ -129,7 +131,9 @@
     "id": "srpski-korak",
     "slug": "srpski-korak",
     "icon": "🇷🇸",
-    "image": "/images/projects/srpski-korak.png",
+    "image": "/images/projects/srpski-korak.webp",
+    "imageWidth": 1520,
+    "imageHeight": 1120,
     "title": {
       "en": "Srpski Korak",
       "ru": "Srpski Korak (Српски корак по корак)"
@@ -360,7 +364,9 @@
     "id": "drum-analyzer",
     "slug": "drum-analyzer",
     "icon": "🥁",
-    "image": "/images/projects/drum-analyzer.png",
+    "image": "/images/projects/drum-analyzer.webp",
+    "imageWidth": 1520,
+    "imageHeight": 1120,
     "title": {
       "en": "DrumAnalyzer",
       "ru": "DrumAnalyzer"
@@ -542,7 +548,9 @@
     "id": "chromeniche",
     "slug": "chromeniche",
     "icon": "🧩",
-    "image": "/images/projects/chromeniche.png",
+    "image": "/images/projects/chromeniche.webp",
+    "imageWidth": 1520,
+    "imageHeight": 1120,
     "title": {
       "en": "ChromeNiche",
       "ru": "ChromeNiche"
@@ -775,7 +783,9 @@
     "id": "pdd-serbia",
     "slug": "pdd-serbia",
     "icon": "🚦",
-    "image": "/images/projects/pdd-serbia.png",
+    "image": "/images/projects/pdd-serbia.webp",
+    "imageWidth": 1324,
+    "imageHeight": 978,
     "title": {
       "en": "Serbian Road Rules: Interactive Situations",
       "ru": "ПДД Сербии: интерактивные ситуации"
@@ -1069,7 +1079,9 @@
     "id": "linkedin-cover-letter",
     "slug": "linkedin-cover-letter",
     "icon": "✉️",
-    "image": "/images/projects/linkedin-cover-letter.png",
+    "image": "/images/projects/linkedin-cover-letter.webp",
+    "imageWidth": 1085,
+    "imageHeight": 800,
     "title": {
       "en": "LinkedIn Cover Letter",
       "ru": "LinkedIn Cover Letter"
@@ -1197,7 +1209,9 @@
     "id": "spotify-bpm",
     "slug": "spotify-bpm",
     "icon": "🎵",
-    "image": "/images/projects/spotify-bpm.png",
+    "image": "/images/projects/spotify-bpm.webp",
+    "imageWidth": 440,
+    "imageHeight": 280,
     "title": {
       "en": "Spotify BPM",
       "ru": "Spotify BPM"
@@ -1437,7 +1451,9 @@
     "id": "youtube-screenshot",
     "slug": "youtube-screenshot",
     "icon": "📸",
-    "image": "/images/projects/youtube-screenshot.png",
+    "image": "/images/projects/youtube-screenshot.webp",
+    "imageWidth": 1085,
+    "imageHeight": 800,
     "title": {
       "en": "YouTube Screenshot Extension",
       "ru": "Расширение для скриншотов YouTube"

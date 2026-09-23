@@ -44,8 +44,15 @@ const n = totals();
           </span>
           </span>
           {p.image && (
-            <span class="slide__shot">
-              <img src={p.image} alt="" width="760" height="560" loading={i === 0 ? 'eager' : 'lazy'} decoding="async" />
+            <span class="slide__shot" style={`--shot-w: ${p.imageWidth}px`}>
+              <img
+                src={p.image}
+                alt=""
+                width={p.imageWidth}
+                height={p.imageHeight}
+                loading={i === 0 ? 'eager' : 'lazy'}
+                decoding="async"
+              />
             </span>
           )}
         </a>
