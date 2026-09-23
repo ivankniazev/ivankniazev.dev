@@ -775,7 +775,7 @@
     "id": "pdd-serbia",
     "slug": "pdd-serbia",
     "icon": "🚦",
-    "image": null,
+    "image": "/images/projects/pdd-serbia.png",
     "title": {
       "en": "Serbian Road Rules: Interactive Situations",
       "ru": "ПДД Сербии: интерактивные ситуации"
@@ -1069,7 +1069,7 @@
     "id": "linkedin-cover-letter",
     "slug": "linkedin-cover-letter",
     "icon": "✉️",
-    "image": null,
+    "image": "/images/projects/linkedin-cover-letter.png",
     "title": {
       "en": "LinkedIn Cover Letter",
       "ru": "LinkedIn Cover Letter"

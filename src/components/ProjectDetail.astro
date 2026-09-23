@@ -19,7 +19,7 @@ const site = links.website || links.download || links.github;
 ---
 
 <article class="accent" style={`--accent-h: ${project.accentHue}`}>
-  <header class="cover">
+  <header class:list={['cover', { 'cover--shot': project.image }]}>
     <div class="cover__inner shell">
       <div class="cover__top">
         <span class="meta">{project.domain[lang]}</span>
@@ -40,6 +40,11 @@ const site = links.website || links.download || links.github;
         )}
       </div>
     </div>
+    {project.image && (
+      <div class="cover__shot">
+        <img src={project.image} alt={project.title[lang]} width="760" height="560" decoding="async" />
+      </div>
+    )}
   </header>
 
   <div class="detail__intro shell">

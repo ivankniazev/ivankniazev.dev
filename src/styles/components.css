@@ -77,14 +77,28 @@
     flex: 0 0 calc(100% - 96px);
     scroll-snap-align: start;
     min-height: 420px;
-    padding: var(--s-6) var(--s-gut);
     background: var(--accent-solid);
     color: var(--accent-on-solid);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    text-decoration: none;
+  }
+  /* a screenshot takes the right edge and bleeds top to bottom; without
+     one the copy simply spans the full panel — no placeholder needed. */
+  .slide--shot { grid-template-columns: minmax(0, 1fr) 42%; }
+  .slide__body {
+    padding: var(--s-6) var(--s-gut);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: var(--s-5);
-    text-decoration: none;
+    min-width: 0;
+  }
+  .slide__shot { overflow: hidden; position: relative; }
+  .slide__shot img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .slide__shot::after {
+    content: ''; position: absolute; inset: 0;
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent-on-solid) 24%, transparent);
   }
   .slide__top { display: flex; justify-content: space-between; align-items: baseline; gap: var(--s-4); }
   .slide__top .meta { color: inherit; }
@@ -177,6 +191,21 @@
     color: var(--accent-on-solid);
     padding-block: var(--s-7) var(--s-6);
   }
+  .cover--shot {
+    padding-bottom: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .cover--shot .cover__inner { padding-bottom: var(--s-6); }
+  .cover__shot { max-width: var(--wrap); width: 100%; margin: 0 auto; padding-inline: var(--s-gut); }
+  .cover__shot img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    object-position: center top;
+    border: 1px solid color-mix(in srgb, var(--accent-on-solid) 28%, transparent);
+    border-bottom: 0;
+  }
   .cover__inner { display: flex; flex-direction: column; gap: var(--s-5); }
   .cover__top { display: flex; justify-content: space-between; align-items: baseline; gap: var(--s-4); flex-wrap: wrap; }
   .cover__top .meta, .cover .state { color: inherit; }
@@ -265,6 +294,8 @@
     .list-head { grid-template-columns: minmax(0, 1fr); gap: var(--s-6); }
     .detail__intro, .detail__cols { grid-template-columns: minmax(0, 1fr); gap: var(--s-6); }
     .features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .slide--shot { grid-template-columns: minmax(0, 1fr) 34%; }
+    .cover__shot img { max-height: 300px; }
     .sheet__inner { grid-template-columns: 200px minmax(0, 1fr); }
     .policy-aside { grid-column: 2; }
   }
@@ -273,7 +304,13 @@
     .nav { gap: var(--s-4); }
     .nav__domain { display: none; }
     .nav__links { gap: var(--s-4); }
-    .slide { flex-basis: calc(100% - 34px); min-height: 330px; padding-block: var(--s-5); }
+    .slide { flex-basis: calc(100% - 34px); min-height: 330px; }
+    .slide__body { padding-block: var(--s-5); }
+    /* the screenshot would squeeze the name below reading size — drop it,
+       the project page still shows it. */
+    .slide--shot { grid-template-columns: minmax(0, 1fr); }
+    .slide__shot { display: none; }
+    .cover__shot img { max-height: 220px; }
     .slider__bar { flex-wrap: wrap; gap: var(--s-3); min-height: 0; padding-block: var(--s-3); }
     .counters { margin-left: 0; width: 100%; gap: var(--s-4); }
     .slider__nav { display: none; }

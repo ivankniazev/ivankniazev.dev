@@ -20,11 +20,12 @@ const n = totals();
       const status = statusOf(p);
       return (
         <a
-          class="slide accent"
+          class:list={['slide', 'accent', { 'slide--shot': p.image }]}
           id={`slide-${i + 1}`}
           href={getLocalizedPath(`/projects/${p.slug}`, lang)}
           style={`--accent-h: ${p.accentHue}`}
         >
+          <span class="slide__body">
           <span class="slide__top">
             <span class="meta">{String(i + 1).padStart(2, '0')} — {p.domain[lang]}</span>
             <span class="meta">
@@ -41,6 +42,12 @@ const n = totals();
             </span>
             <span class="slide__cta">{t('home.open')} →</span>
           </span>
+          </span>
+          {p.image && (
+            <span class="slide__shot">
+              <img src={p.image} alt="" width="760" height="560" loading={i === 0 ? 'eager' : 'lazy'} decoding="async" />
+            </span>
+          )}
         </a>
       );
     })}
