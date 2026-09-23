@@ -1,0 +1,161 @@
+[
+  {
+    "slug": "lilit-character",
+    "accentHue": 215,
+    "year": 2026,
+    "date": { "en": "September 2026", "ru": "сентябрь 2026" },
+    "minutes": 8,
+    "topic": { "en": "Tools and characters", "ru": "Инструменты и персонажи" },
+    "title": {
+      "en": "A character with a canon",
+      "ru": "Персонаж, у которого есть канон"
+    },
+    "lede": {
+      "en": "How to keep a face the same from frame to frame when a model draws every frame: one file of truth, a sheet of base poses, and clips stitched through a shared neutral.",
+      "ru": "Как держать внешность одинаковой от кадра к кадру, когда каждый кадр рисует модель: один файл-истина, лист базовых поз и клипы, сшитые через общую нейтраль."
+    },
+    "hero": "/images/writing/lilit-portrait.webp",
+    "heroWidth": 900,
+    "heroHeight": 900,
+    "sections": [
+      {
+        "id": "drift",
+        "title": { "en": "The drift", "ru": "Дрейф" },
+        "blocks": [
+          {
+            "type": "p",
+            "text": {
+              "en": "My assistant has a face. Not because it needed one, but because a bot that lives in the corner of the screen and reports on your mail is easier to build when it looks like someone rather than a notification.",
+              "ru": "У моего ассистента есть лицо. Не потому, что оно ему нужно, а потому, что бота, который живёт в углу экрана и докладывает про почту, проще делать, когда он выглядит как кто-то, а не как уведомление."
+            }
+          },
+          {
+            "type": "p",
+            "text": {
+              "en": "The first attempt failed the way these attempts fail. I described the character in each prompt, by hand. By the fifth image the horns had changed their curve, the glasses had gone from round to oval, and the crescent pendant had quietly disappeared. Every frame was fine on its own. Together they were four different people.",
+              "ru": "Первая попытка провалилась ровно так, как такие попытки и проваливаются. Я описывал внешность в каждом промпте руками. К пятой картинке рога сменили изгиб, оправа из круглой стала овальной, а подвеска-месяц тихо исчезла. Каждый кадр по отдельности был нормальным. Вместе — четыре разных человека."
+            }
+          },
+          {
+            "type": "p",
+            "text": {
+              "en": "The fix turned out to be dull and reliable: stop describing her by hand at all.",
+              "ru": "Решение оказалось скучным и надёжным: перестать описывать её руками вообще."
+            }
+          }
+        ]
+      },
+      {
+        "id": "canon",
+        "title": { "en": "The canon, in one file", "ru": "Канон одним файлом" },
+        "blocks": [
+          {
+            "type": "p",
+            "text": {
+              "en": "The whole appearance lives between two markers in a single file. The generation scripts splice that block onto the front of every prompt, so the description exists in exactly one place. Change it there and it changes everywhere — including in clips generated six months later.",
+              "ru": "Вся внешность живёт между двумя маркерами в одном файле. Скрипты генерации подставляют этот блок в начало каждого промпта, поэтому описание существует ровно в одном месте. Меняешь там — меняется везде, в том числе в клипах, сгенерированных через полгода."
+            }
+          },
+          {
+            "type": "code",
+            "text": "<!-- canon:start -->\nHorns: two curved dark crimson horns with fine ridges,\ngrowing from the top of the head just in front of the bun,\ncurving up and slightly outward.\nGlasses: thin dark round wire-frame glasses.\nJewelry: black choker with a small silver crescent-moon\npendant; silver crescent-moon drop earrings.\nNothing else: no other accessories, no tattoos, no wings,\nno tail, no hat, no other characters.\n<!-- canon:end -->"
+          },
+          {
+            "type": "p",
+            "text": {
+              "en": "The last line earns its place. Without an explicit prohibition the model adds things — and the longer the prompt, the more eagerly it adds them. Wings show up. A second character wanders into frame. Naming what must not appear turned out to matter as much as naming what must.",
+              "ru": "Последняя строка стоит там не зря. Без явного запрета модель дорисовывает от себя — и тем охотнее, чем длиннее промпт. Появляются крылья. В кадр забредает второй персонаж. Назвать то, чего быть не должно, оказалось так же важно, как назвать то, что должно."
+            }
+          }
+        ]
+      },
+      {
+        "id": "poses",
+        "title": { "en": "The sheet of base poses", "ru": "Лист базовых поз" },
+        "blocks": [
+          {
+            "type": "p",
+            "text": {
+              "en": "Text holds the details but not the proportions. Written description alone gives you the right horns on a face that is subtly the wrong shape. So the canon is only half the input: the other half is a reference frame.",
+              "ru": "Текст держит детали, но не держит пропорции. Одно только словесное описание даёт правильные рога на лице чуть-чуть не той формы. Поэтому канон — только половина входа: вторая половина — кадр-референс."
+            }
+          },
+          {
+            "type": "p",
+            "text": {
+              "en": "Nine poses were cut from a single sheet, shot in one pass. Because they came out of one generation, there is no drift between them at all — same light, same framing, same face. Any of them can serve as the reference for a new clip.",
+              "ru": "Девять поз нарезаны из одного листа, снятого за раз. Поскольку они вышли из одной генерации, между ними нет расхождения вообще — тот же свет, та же композиция, то же лицо. Любая из них годится как референс для нового клипа."
+            }
+          },
+          {
+            "type": "figure",
+            "src": "/images/writing/lilit-poses.webp",
+            "width": 2700,
+            "height": 300,
+            "caption": {
+              "en": "Base v2 — nine poses, one sheet, flat green. chin · coffee · glasses · hands · lookup · neutral · pen · point · sleep",
+              "ru": "База v2 — девять поз, один лист, чистый зелёный. chin · coffee · glasses · hands · lookup · neutral · pen · point · sleep"
+            }
+          }
+        ]
+      },
+      {
+        "id": "clips",
+        "title": { "en": "Clips through the neutral", "ru": "Клипы через нейтраль" },
+        "blocks": [
+          {
+            "type": "p",
+            "text": {
+              "en": "A companion that only holds still is a picture. To move, it needs clips — and clips need to follow each other without a jolt. The trick is one rule: every one-shot clip begins and ends on the same neutral pose.",
+              "ru": "Компаньон, который только стоит, — это картинка. Чтобы двигаться, нужны клипы, а клипы должны идти друг за другом без рывка. Приём один: каждый одноразовый клип начинается и заканчивается одной и той же нейтральной позой."
+            }
+          },
+          {
+            "type": "p",
+            "text": {
+              "en": "That single constraint removes the whole transition problem. Any clip can follow any other, in any order, and no in-between frames are needed. Longer states — thinking, working, sleeping — are cut into three pieces through the same frame.",
+              "ru": "Одно это ограничение снимает всю проблему переходов. Любой клип может идти после любого, в любом порядке, и переходные кадры не нужны вообще. Длящиеся состояния — думает, работает, спит — разрезаны на три части через тот же кадр."
+            }
+          },
+          {
+            "type": "diagram"
+          },
+          {
+            "type": "p",
+            "text": {
+              "en": "The generation itself is unremarkable and cheap, which was the point. The clips go through OpenRouter's video API on Kling v3.0 std: five seconds, square, 720p, about $0.42 a clip, with the neutral frame handed in as both the first and the last frame. The neutral frame itself was drawn once for about four cents. Only the action goes into the clip prompt — the appearance is already there, spliced in from the canon.",
+              "ru": "Сама генерация ничем не примечательна и стоит копейки, в чём и был смысл. Клипы идут через видео-API OpenRouter на Kling v3.0 std: пять секунд, квадрат, 720p, около $0,42 за клип, а нейтральный кадр отдаётся и первым, и последним. Сам нейтральный кадр нарисован один раз примерно за четыре цента. В промпт клипа уходит только действие — внешность там уже есть, подставлена из канона."
+            }
+          }
+        ]
+      },
+      {
+        "id": "green",
+        "title": { "en": "What did not go to plan", "ru": "Что не сошлось" },
+        "blocks": [
+          {
+            "type": "p",
+            "text": {
+              "en": "The spec said the background must be flat bright green, #00FF00, evenly lit, no shadows. The model agreed, and then produced lime. Not the green that was asked for — near it, off by enough that a keyer tuned to #00FF00 left a rim of fringe on every strand of hair.",
+              "ru": "В ТЗ было сказано: фон — сплошной ярко-зелёный, #00FF00, ровный, без теней. Модель согласилась и выдала лайм. Не тот зелёный, который просили — рядом, но мимо настолько, что кеер, настроенный на #00FF00, оставлял кайму на каждой пряди волос."
+            }
+          },
+          {
+            "type": "p",
+            "text": {
+              "en": "Arguing with the prompt was the obvious move and the wrong one. The keying script now reads the background colour out of the corner of the first frame and keys against whatever it actually finds. The model is allowed to be approximately green.",
+              "ru": "Спорить с промптом было очевидным ходом и неправильным. Теперь скрипт кея берёт цвет фона из угла первого кадра и выбивает то, что там действительно есть. Модели разрешено быть приблизительно зелёной."
+            }
+          },
+          {
+            "type": "p",
+            "text": {
+              "en": "That is the shape of most of this work. The interesting decisions were not about prompts at all: put the description in one place, shoot the references in one pass, pick a single frame everything returns to, and measure what came out instead of insisting on what was asked for.",
+              "ru": "Так устроена бóльшая часть этой работы. Интересные решения были вообще не про промпты: держать описание в одном месте, снять референсы за один раз, выбрать один кадр, в который всё возвращается, и мерить то, что получилось, вместо того чтобы настаивать на заказанном."
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

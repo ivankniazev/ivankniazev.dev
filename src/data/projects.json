@@ -2,6 +2,7 @@
   {
     "id": "living-tales",
     "slug": "living-tales",
+    "kind": "product",
     "icon": "📖",
     "image": "/images/projects/living-tales.webp",
     "imageWidth": 760,
@@ -130,6 +131,7 @@
   {
     "id": "srpski-korak",
     "slug": "srpski-korak",
+    "kind": "product",
     "icon": "🇷🇸",
     "image": "/images/projects/srpski-korak.webp",
     "imageWidth": 1520,
@@ -363,6 +365,7 @@
   {
     "id": "drum-analyzer",
     "slug": "drum-analyzer",
+    "kind": "product",
     "icon": "🥁",
     "image": "/images/projects/drum-analyzer.webp",
     "imageWidth": 1520,
@@ -547,6 +550,7 @@
   {
     "id": "chromeniche",
     "slug": "chromeniche",
+    "kind": "product",
     "icon": "🧩",
     "image": "/images/projects/chromeniche.webp",
     "imageWidth": 1520,
@@ -782,6 +786,7 @@
   {
     "id": "pdd-serbia",
     "slug": "pdd-serbia",
+    "kind": "product",
     "icon": "🚦",
     "image": "/images/projects/pdd-serbia.webp",
     "imageWidth": 1324,
@@ -931,6 +936,7 @@
   {
     "id": "privacy-cleaner",
     "slug": "privacy-cleaner",
+    "kind": "product",
     "icon": "🛡️",
     "image": null,
     "title": {
@@ -1078,6 +1084,7 @@
   {
     "id": "linkedin-cover-letter",
     "slug": "linkedin-cover-letter",
+    "kind": "product",
     "icon": "✉️",
     "image": "/images/projects/linkedin-cover-letter.webp",
     "imageWidth": 1085,
@@ -1208,6 +1215,7 @@
   {
     "id": "spotify-bpm",
     "slug": "spotify-bpm",
+    "kind": "product",
     "icon": "🎵",
     "image": "/images/projects/spotify-bpm.webp",
     "imageWidth": 440,
@@ -1450,6 +1458,7 @@
   {
     "id": "youtube-screenshot",
     "slug": "youtube-screenshot",
+    "kind": "product",
     "icon": "📸",
     "image": "/images/projects/youtube-screenshot.webp",
     "imageWidth": 1085,
@@ -1582,6 +1591,192 @@
     "domain": {
       "en": "Browser extension",
       "ru": "Расширение браузера"
+    },
+    "featured": false
+  },
+  {
+    "id": 10,
+    "slug": "lilit",
+    "kind": "personal",
+    "icon": "moon",
+    "image": "/images/projects/lilit.webp",
+    "imageWidth": 1520,
+    "imageHeight": 560,
+    "title": {
+      "en": "Lilit",
+      "ru": "Лилит"
+    },
+    "shortDescription": {
+      "en": "A personal Telegram assistant with modules: it triages two mailboxes, matches vacancies against a CV and answers in words. A companion on the desktop mirrors what it sends.",
+      "ru": "Личный ассистент в Telegram с модулями: разбирает два почтовых ящика, сверяет вакансии с резюме и отвечает словами. На рабочем столе живёт компаньон, который зеркалит то, что она присылает."
+    },
+    "tech": [
+      "C#",
+      ".NET 8",
+      "PostgreSQL",
+      "Electron"
+    ],
+    "status": "in-development",
+    "year": 2026,
+    "overview": {
+      "en": "Lilit reads Gmail and Mail.ru over IMAP and returns a verdict on each letter rather than a summary. What matters arrives as a card with buttons; the rest accumulates and comes back as one digest at 21:00, and the filter is tuned by pressing those buttons instead of editing a prompt. A second module checks vacancies against a CV and tracks applications. On top sits a secretary: write to the bot in plain words and it answers from your own data, remembers and reminds. It runs on the smallest VPS — about 100 MB of memory at rest, with the heavy work at OpenRouter. Embeddings and search live in Postgres with pgvector. A separate Electron client puts an animated character in the corner of the screen that mirrors everything sent to Telegram.",
+      "ru": "Лилит читает Gmail и Mail.ru по IMAP и выносит по каждому письму вердикт, а не пересказ. Важное приходит карточкой с кнопками, остальное копится и возвращается одним итогом в 21:00, а фильтр настраивается нажатием этих кнопок, а не правкой промпта. Второй модуль сверяет вакансии с резюме и ведёт трекер откликов. Поверх модулей — секретарь: боту можно написать словами, и он ответит по твоим данным, запомнит и напомнит. Живёт на самом маленьком VPS — около 100 МБ памяти в покое, вся тяжёлая работа у OpenRouter. Эмбеддинги и поиск — в Postgres с pgvector. Отдельный клиент на Electron держит в углу экрана анимированного персонажа, который зеркалит всё, что ушло в Telegram."
+    },
+    "techStack": [
+      ".NET 8",
+      "PostgreSQL + pgvector",
+      "MailKit (IMAP)",
+      "Dapper / Npgsql",
+      "PdfPig",
+      "AngleSharp",
+      "Serilog",
+      "OpenRouter",
+      "Docker Compose",
+      "Electron"
+    ],
+    "features": [
+      {
+        "title": {
+          "en": "A verdict, not a summary",
+          "ru": "Вердикт вместо пересказа"
+        },
+        "description": {
+          "en": "Each letter gets a decision about what to do with it. Retelling the contents is the job the inbox already does badly.",
+          "ru": "По каждому письму — решение, что с ним делать. Пересказывать содержимое почта и так умеет, и плохо."
+        }
+      },
+      {
+        "title": {
+          "en": "The filter is buttons",
+          "ru": "Фильтр — это кнопки"
+        },
+        "description": {
+          "en": "What counts as important is tuned by pressing buttons under the cards, not by rewriting a prompt.",
+          "ru": "Что считать важным, настраивается нажатиями под карточками, а не переписыванием промпта."
+        }
+      },
+      {
+        "title": {
+          "en": "One digest at 21:00",
+          "ru": "Один итог в 21:00"
+        },
+        "description": {
+          "en": "Everything unimportant accumulates during the day and arrives once, in the evening, instead of buzzing.",
+          "ru": "Всё неважное копится за день и приходит один раз вечером, а не жужжит весь день."
+        }
+      },
+      {
+        "title": {
+          "en": "Vacancies against the CV",
+          "ru": "Вакансии против резюме"
+        },
+        "description": {
+          "en": "A second module compares a posting with the CV and keeps a tracker of what was sent where.",
+          "ru": "Второй модуль сверяет вакансию с резюме и ведёт трекер того, что куда отправлено."
+        }
+      },
+      {
+        "title": {
+          "en": "Written to in words",
+          "ru": "К ней пишут словами"
+        },
+        "description": {
+          "en": "The secretary layer answers from the profile and the CV, remembers what was said and reminds later.",
+          "ru": "Слой секретаря отвечает по профилю и резюме, помнит сказанное и напоминает потом."
+        }
+      },
+      {
+        "title": {
+          "en": "A companion on the desktop",
+          "ru": "Компаньон на рабочем столе"
+        },
+        "description": {
+          "en": "An Electron client shows an animated character over every window; it mirrors the cards and states from the assistant.",
+          "ru": "Клиент на Electron держит анимированного персонажа поверх всех окон и зеркалит карточки и состояния ассистента."
+        }
+      }
+    ],
+    "useCases": [
+      {
+        "title": {
+          "en": "Two mailboxes, one attention span",
+          "ru": "Два ящика, одно внимание"
+        },
+        "description": {
+          "en": "Gmail and Mail.ru collapse into one stream with a decision attached to every letter.",
+          "ru": "Gmail и Mail.ru сводятся в один поток, где у каждого письма есть решение."
+        }
+      },
+      {
+        "title": {
+          "en": "A job search that is tracked",
+          "ru": "Поиск работы, который не теряется"
+        },
+        "description": {
+          "en": "Postings are scored against the CV and applications stop living in browser tabs.",
+          "ru": "Вакансии сверяются с резюме, а отклики перестают жить во вкладках браузера."
+        }
+      }
+    ],
+    "developmentStatus": [
+      {
+        "title": {
+          "en": "Mail module",
+          "ru": "Модуль почты"
+        },
+        "description": {
+          "en": "IMAP for Gmail and Mail.ru, a verdict per letter, cards with buttons and the 21:00 digest.",
+          "ru": "IMAP для Gmail и Mail.ru, вердикт по письму, карточки с кнопками и итог в 21:00."
+        },
+        "completed": true,
+        "state": "completed"
+      },
+      {
+        "title": {
+          "en": "Vacancies and the secretary",
+          "ru": "Вакансии и секретарь"
+        },
+        "description": {
+          "en": "CV matching, an application tracker, and answers in plain words over the same data.",
+          "ru": "Сверка с резюме, трекер откликов и ответы словами по тем же данным."
+        },
+        "completed": true,
+        "state": "completed"
+      },
+      {
+        "title": {
+          "en": "Server and backups",
+          "ru": "Сервер и бэкапы"
+        },
+        "description": {
+          "en": "Docker Compose on a small VPS, the image shipped from the dev machine, a nightly dump kept for 14 days.",
+          "ru": "Docker Compose на маленьком VPS, образ уезжает с машины разработки, ночной дамп хранится 14 дней."
+        },
+        "completed": true,
+        "state": "completed"
+      },
+      {
+        "title": {
+          "en": "Desktop companion",
+          "ru": "Десктопный компаньон"
+        },
+        "description": {
+          "en": "The character, the clip pipeline and the states are in place; the set of clips is still being filled in.",
+          "ru": "Персонаж, пайплайн клипов и состояния готовы; набор клипов ещё наполняется."
+        },
+        "completed": false,
+        "state": "in-progress"
+      }
+    ],
+    "links": {
+      "website": null,
+      "download": null,
+      "github": null
+    },
+    "accentHue": 215,
+    "domain": {
+      "en": "Personal assistant",
+      "ru": "Личный ассистент"
     },
     "featured": false
   }

@@ -3,7 +3,16 @@ import projectsData from '../data/projects.json';
 export type Step = { state?: string; completed?: boolean };
 export type Project = (typeof projectsData)[number];
 
-export const projects = projectsData as unknown as Project[];
+const all = projectsData as unknown as Project[];
+
+/** The product board: the nine things that are, or are meant to be, products. */
+export const projects = all.filter((p) => (p as any).kind !== 'personal');
+
+/** Personal tools — built for one user, shown apart from the board. */
+export const personal = all.filter((p) => (p as any).kind === 'personal');
+
+/** Everything, for routing and neighbour links. */
+export const everyProject = all;
 
 /** Normalise a development step to one of three states. */
 export function stepState(step: Step): 'completed' | 'in-progress' | 'pending' {
@@ -24,6 +33,7 @@ export function progressOf(project: Project) {
 
 /** Site-wide counters — the numbers the home page leads with. */
 export function totals() {
+  // deliberately over `projects` only: the board's numbers describe products
   let done = 0;
   let work = 0;
   let pending = 0;

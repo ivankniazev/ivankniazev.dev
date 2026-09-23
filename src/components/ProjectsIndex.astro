@@ -1,7 +1,7 @@
 ---
 import LedgerRow from './LedgerRow.astro';
 import { useTranslations, type Lang } from '../utils/i18n';
-import { projects, totals, stackCounts } from '../utils/projects';
+import { projects, personal, totals, stackCounts } from '../utils/projects';
 
 interface Props {
   lang: Lang;
@@ -58,6 +58,18 @@ const stack = stackCounts(12);
   </div>
   {projects.map((p: any) => <LedgerRow project={p} lang={lang} variant="list" />)}
 </section>
+
+{personal.length > 0 && (
+  <section class="section shell" aria-labelledby="personal-title">
+    <div class="section__head">
+      <h2 class="head" id="personal-title">{t('projects.personalTitle')}</h2>
+      <span class="rule" aria-hidden="true"></span>
+      <span class="meta">{t('projects.personalHint')}</span>
+    </div>
+    <p class="prose" style="margin-bottom: var(--s-4)">{t('projects.personalLede')}</p>
+    {personal.map((p: any) => <LedgerRow project={p} lang={lang} variant="list" />)}
+  </section>
+)}
 
 <section class="section shell" aria-labelledby="stack-title">
   <div class="section__head">

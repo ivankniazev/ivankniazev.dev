@@ -1,0 +1,20 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Article from '../../../components/Article.astro';
+import writing from '../../../data/writing.json';
+
+export async function getStaticPaths() {
+  return writing.map((article) => ({ params: { slug: article.slug }, props: { article } }));
+}
+
+const { article } = Astro.props;
+const lang = 'ru';
+---
+
+<Layout
+  title={`${article.title[lang]} · Иван Князев`}
+  lang={lang}
+  description={article.lede[lang]}
+>
+  <Article article={article} lang={lang} />
+</Layout>

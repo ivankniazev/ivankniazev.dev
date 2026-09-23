@@ -10,6 +10,7 @@ const { lang, currentPath } = Astro.props;
 const t = useTranslations(lang);
 const isHome = currentPath === '/' || currentPath === '/ru' || currentPath === '/ru/';
 const isProjects = currentPath.startsWith('/projects') || currentPath.startsWith('/ru/projects');
+const isWriting = currentPath.startsWith('/writing') || currentPath.startsWith('/ru/writing');
 const enPath = isHome ? '/' : currentPath.replace(/^\/ru/, '');
 const ruPath = isHome ? '/ru/' : `/ru${currentPath}`;
 ---
@@ -21,6 +22,7 @@ const ruPath = isHome ? '/ru/' : `/ru${currentPath}`;
     <div class="nav__links">
       <a href={getLocalizedPath('/', lang)} aria-current={isHome ? 'page' : undefined}>{t('nav.home')}</a>
       <a href={getLocalizedPath('/projects', lang)} aria-current={isProjects ? 'page' : undefined}>{t('nav.projects')}</a>
+      <a href={getLocalizedPath('/writing', lang)} aria-current={isWriting ? 'page' : undefined}>{t('nav.writing')}</a>
     </div>
     <div class="nav__lang" aria-label="Language">
       <a href={enPath} hreflang="en" aria-current={lang === 'en' ? 'true' : undefined}>EN</a>

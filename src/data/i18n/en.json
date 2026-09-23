@@ -4,7 +4,8 @@
     "projects": "Projects",
     "terms": "Terms",
     "privacy": "Privacy",
-    "refund": "Refund"
+    "refund": "Refund",
+    "writing": "Writing"
   },
   "home": {
     "title": "Ivan Kniazev",
@@ -80,7 +81,10 @@
     "stepsQueue": "queued",
     "onward": "Further down the ledger",
     "contents": "Contents",
-    "related": "Related"
+    "related": "Related",
+    "personalTitle": "Personal tools",
+    "personalHint": "one user — me",
+    "personalLede": "Not products and not meant to be: things built for my own week, kept here because the work in them is real. No pricing, no signup, no support."
   },
   "footer": {
     "copyright": "© 2025 Ivan Kniazev. All rights reserved.",
@@ -192,5 +196,19 @@
       "title": "6. Contact Information",
       "content": "For any questions about this Refund Policy, please contact us at contact@ivankniazev.dev."
     }
+  },
+  "notFound": {
+    "label": "404 — page not found",
+    "title": "Nothing here. Lilit checked.",
+    "text": "There is no such address on this site. The ledger with everything I build is still where it was.",
+    "toIndex": "To the ledger",
+    "write": "Write to me"
+  },
+  "writing": {
+    "title": "Writing",
+    "lede": "Notes on the things I build, when the making turned out more interesting than the result.",
+    "readingTime": "min read",
+    "contents": "Contents",
+    "back": "All writing"
   }
 }

@@ -12,8 +12,11 @@ const { project, lang } = Astro.props;
 const t = useTranslations(lang);
 const status = statusOf(project);
 const { done, total, steps } = progressOf(project);
+// A personal tool is not on the board, so it points back into it from the top.
 const index = projects.findIndex((p: any) => p.slug === project.slug);
-const onward = [1, 2, 3].map((k) => projects[(index + k) % projects.length]);
+const onward = index === -1
+  ? projects.slice(0, 3)
+  : [1, 2, 3].map((k) => projects[(index + k) % projects.length]);
 const links = project.links || {};
 const site = links.website || links.download || links.github;
 ---

@@ -1,0 +1,35 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { useTranslations, getLocalizedPath } from '../../../utils/i18n';
+import writing from '../../../data/writing.json';
+
+const lang = 'ru';
+const t = useTranslations(lang);
+---
+
+<Layout title={`${t('writing.title')} · Иван Князев`} lang={lang} description={t('writing.lede')}>
+  <section class="list-head shell">
+    <div>
+      <h1 class="display">{t('writing.title')}</h1>
+      <p class="lede">{t('writing.lede')}</p>
+    </div>
+  </section>
+
+  <section class="shell">
+    {writing.map((a) => (
+      <a
+        class="row accent article-row"
+        href={getLocalizedPath(`/writing/${a.slug}`, lang)}
+        style={`--accent-h: ${a.accentHue}`}
+      >
+        <span class="mark mark--round" aria-hidden="true"></span>
+        <span class="article-row__meta meta">{a.date[lang]}</span>
+        <span>
+          <span class="article-row__title">{a.title[lang]}</span>
+          <span class="article-row__lede">{a.lede[lang]}</span>
+        </span>
+        <span class="article-row__time meta">{a.minutes} {t('writing.readingTime')}</span>
+      </a>
+    ))}
+  </section>
+</Layout>

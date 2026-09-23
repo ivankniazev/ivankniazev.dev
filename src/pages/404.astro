@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { useTranslations } from '../utils/i18n';
+
+// GitHub Pages serves one 404.html for every missing path, in either language,
+// so this page carries both.
+const en = useTranslations('en');
+const ru = useTranslations('ru');
+---
+
+<Layout title="404 · Ivan Kniazev" lang="en">
+  <section class="notfound shell">
+    <div class="notfound__copy">
+      <p class="meta">{en('notFound.label')}</p>
+      <h1 class="display">{en('notFound.title')}</h1>
+      <p class="lede">{en('notFound.text')}</p>
+      <div class="notfound__actions">
+        <a href="/projects" class="btn btn--primary">{en('notFound.toIndex')}</a>
+        <a href="mailto:contact@ivankniazev.dev" class="btn">{en('notFound.write')}</a>
+      </div>
+
+      <div class="notfound__ru">
+        <p class="meta">{ru('notFound.label')}</p>
+        <p class="sans">{ru('notFound.text')}</p>
+        <a href="/ru/projects">{ru('notFound.toIndex')} →</a>
+      </div>
+    </div>
+
+    <div class="notfound__art">
+      <img
+        src="/images/writing/lilit-sleep.webp"
+        alt=""
+        width="700"
+        height="686"
+        style="--shot-w: 700px"
+      />
+    </div>
+  </section>
+</Layout>

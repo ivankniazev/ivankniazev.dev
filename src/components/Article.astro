@@ -1,0 +1,83 @@
+---
+import { useTranslations, getLocalizedPath, type Lang } from '../utils/i18n';
+
+interface Props {
+  article: any;
+  lang: Lang;
+}
+
+const { article, lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<article class="accent" style={`--accent-h: ${article.accentHue}`}>
+  <header class="cover cover--article">
+    <div class="cover__inner shell">
+      <div class="cover__top">
+        <span class="meta">{article.topic[lang]}</span>
+        <span class="meta">{article.date[lang]} · {article.minutes} {t('writing.readingTime')}</span>
+      </div>
+      <div class="cover__article">
+        <div>
+          <h1 class="display">{article.title[lang]}</h1>
+          <p class="cover__text">{article.lede[lang]}</p>
+        </div>
+        {article.hero && (
+          <img
+            class="cover__portrait"
+            src={article.hero}
+            alt=""
+            width={article.heroWidth}
+            height={article.heroHeight}
+            decoding="async"
+          />
+        )}
+      </div>
+    </div>
+  </header>
+
+  <div class="article shell">
+    <nav class="toc toc--dark" aria-label={t('writing.contents')}>
+      <span class="meta">{t('writing.contents')}</span>
+      {article.sections.map((s: any, i: number) => (
+        <a href={`#${s.id}`}>{String(i + 1).padStart(2, '0')} {s.title[lang]}</a>
+      ))}
+    </nav>
+
+    <div class="article__body">
+      {article.sections.map((s: any, i: number) => (
+        <section id={s.id}>
+          <h2>
+            <span class="article__n">{String(i + 1).padStart(2, '0')}</span>
+            {s.title[lang]}
+          </h2>
+
+          {s.blocks.map((b: any) => {
+            if (b.type === 'p') return <p>{b.text[lang]}</p>;
+            if (b.type === 'code') return <pre class="article__code"><code>{b.text}</code></pre>;
+            if (b.type === 'figure') return (
+              <figure class="article__figure">
+                <img src={b.src} alt="" width={b.width} height={b.height} loading="lazy" decoding="async" />
+                <figcaption>{b.caption[lang]}</figcaption>
+              </figure>
+            );
+            if (b.type === 'diagram') return (
+              <div class="article__diagram" role="img" aria-label="neutral → in → loop → out → neutral">
+                <span class="is-anchor">{lang === 'en' ? 'neutral' : 'нейтраль'}</span>
+                <span class="is-arrow" aria-hidden="true">→</span>
+                <span>{lang === 'en' ? 'in' : 'вход'}</span>
+                <span>{lang === 'en' ? 'loop ∞' : 'луп ∞'}</span>
+                <span>{lang === 'en' ? 'out' : 'выход'}</span>
+                <span class="is-arrow" aria-hidden="true">→</span>
+                <span class="is-anchor">{lang === 'en' ? 'neutral' : 'нейтраль'}</span>
+              </div>
+            );
+            return null;
+          })}
+        </section>
+      ))}
+
+      <a href={getLocalizedPath('/writing', lang)} class="article__back meta">← {t('writing.back')}</a>
+    </div>
+  </div>
+</article>
