@@ -12,7 +12,7 @@ const isHome = currentPath === '/' || currentPath === '/ru' || currentPath === '
 const isProjects = currentPath.startsWith('/projects') || currentPath.startsWith('/ru/projects');
 const isWriting = currentPath.startsWith('/writing') || currentPath.startsWith('/ru/writing');
 const enPath = isHome ? '/' : currentPath.replace(/^\/ru/, '');
-const ruPath = isHome ? '/ru/' : `/ru${currentPath}`;
+const ruPath = isHome ? '/ru/' : `/ru${enPath}`;
 ---
 
 <header class="site-header">

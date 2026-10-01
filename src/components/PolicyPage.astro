@@ -54,7 +54,7 @@ const others = (Astro.props.others ?? [
           <h2>{s.title}</h2>
           <p set:html={s.content
             .replace(/(https:\/\/[^\s)]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>')
-            .replace(/([\w.+-]+@[\w-]+\.[\w.]+)/, '<a href="mailto:$1">$1</a>')} />
+            .replace(/([\w.+-]+@[\w-]+(?:\.[\w-]+)+)/, '<a href="mailto:$1">$1</a>')} />
           {s.list.length > 0 && <ul>{s.list.map((li) => <li>{li}</li>)}</ul>}
         </section>
       ))}

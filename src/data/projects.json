@@ -12,28 +12,28 @@
       "ru": "Живые сказки"
     },
     "shortDescription": {
-      "en": "An interactive fairy tale that comes alive as you read aloud: speech is recognized right in the browser and triggers animations at the right moment.",
-      "ru": "Интерактивная сказка, которая оживает, пока вы читаете вслух: речь распознаётся прямо в браузере и запускает анимации в нужный момент."
+      "en": "An interactive picture book that comes alive as a parent reads aloud: speech is recognized right on the device and the illustrations move at the right moment. Ten tales in Russian and English; an iPhone app on the way, with a web demo.",
+      "ru": "Интерактивная книжка, которая оживает, пока взрослый читает вслух: речь распознаётся прямо на устройстве, и иллюстрации двигаются в нужный момент. Десять сказок на русском и английском; готовится приложение для iPhone, есть веб-демо."
     },
     "tech": [
-      "JavaScript",
+      "Flutter",
+      "sherpa-onnx",
       "Vosk",
-      "Web Audio",
-      "Cloudflare Pages"
+      "Web Audio"
     ],
-    "status": "prototype",
+    "status": "in-development",
     "year": 2026,
     "overview": {
-      "en": "I was reading a bedtime book to my son and thought: what if the pictures reacted to my voice? Living Tales is that idea turned into a prototype. You read a fairy tale aloud, the microphone listens, and as soon as you reach a key line the scene animates: the bun rolls away exactly when you finish the sentence. Speech recognition runs entirely on the device with Vosk, so nothing is sent to a server. The first tale is the Russian classic Kolobok; it also works without a microphone by tapping the underlined phrases.",
-      "ru": "Читал сыну книжку и подумал: а что, если картинки будут реагировать на голос? «Живые сказки» — это та самая идея в виде прототипа. Вы читаете сказку вслух, микрофон слушает, и как только вы доходите до ключевой строки, сцена оживает: колобок катится ровно тогда, когда вы дочитали фразу. Распознавание речи работает целиком на устройстве через Vosk, ничего не отправляется на сервер. Первая сказка — «Колобок»; без микрофона тоже работает: достаточно нажимать на подчёркнутые фразы."
+      "en": "I was reading a bedtime book to my son and thought: what if the pictures reacted to my voice? Living Tales is that idea grown into a product. You read a fairy tale aloud, the app follows the text, and as soon as you reach a key line the picture comes alive: the bun rolls away exactly when you finish the sentence. Speech recognition runs entirely on the device, so the voice never leaves it. There are ten tales in Russian and English, from Kolobok and The Turnip to The Three Little Pigs and Little Red Riding Hood; Kolobok is free. Without a microphone the tale still works: tap the underlined words and turn the pages by hand.",
+      "ru": "Читал сыну книжку и подумал: а что, если картинки будут реагировать на голос? «Живые сказки» — эта идея, выросшая в продукт. Вы читаете сказку вслух, приложение следит за текстом, и как только вы доходите до ключевой строки, картинка оживает: колобок катится ровно тогда, когда вы дочитали фразу. Распознавание речи работает целиком на устройстве, голос никуда не уходит. Десять сказок на русском и английском — от «Колобка» и «Репки» до «Трёх поросят» и «Красной Шапочки»; «Колобок» бесплатный. Без микрофона тоже работает: нажимайте на подчёркнутые слова и листайте вручную."
     },
     "techStack": [
-      "JavaScript",
-      "Vosk (offline speech recognition)",
+      "Flutter (iOS)",
+      "sherpa-onnx + T-one (on-device speech recognition)",
+      "Vosk (web demo)",
       "WebAssembly",
       "Web Audio API",
-      "CSS animations",
-      "Cloudflare Pages",
+      "StoreKit in-app purchases",
       "AI-generated illustrations"
     ],
     "features": [
@@ -53,8 +53,8 @@
           "ru": "Полностью на устройстве"
         },
         "description": {
-          "en": "Speech is recognized in the browser with Vosk; audio never leaves the device.",
-          "ru": "Речь распознаётся в браузере через Vosk; звук никуда не уходит с устройства."
+          "en": "Speech is recognized on the device (sherpa-onnx in the app, Vosk in the web demo); audio never leaves it.",
+          "ru": "Речь распознаётся на устройстве (sherpa-onnx в приложении, Vosk в веб-демо); звук никуда не уходит."
         }
       },
       {
@@ -73,8 +73,18 @@
           "ru": "Работает без микрофона"
         },
         "description": {
-          "en": "Tap the underlined phrases to trigger the same animations, plus a full-screen reading mode for phones.",
-          "ru": "Нажимайте подчёркнутые фразы, чтобы запустить те же анимации; есть полноэкранный режим чтения для телефона."
+          "en": "Tap the underlined words to trigger the same animations and turn the pages by hand.",
+          "ru": "Нажимайте подчёркнутые слова, чтобы запустить те же анимации, и листайте страницы вручную."
+        }
+      },
+      {
+        "title": {
+          "en": "Recorded Readings",
+          "ru": "Записи чтения"
+        },
+        "description": {
+          "en": "A parent's reading can be saved on the device, so the child can listen to it again with the same animations.",
+          "ru": "Чтение взрослого можно сохранить на устройстве, чтобы ребёнок послушал его снова — с теми же анимациями."
         }
       }
     ],
@@ -105,12 +115,24 @@
       },
       {
         "title": {
-          "en": "More Tales",
-          "ru": "Больше сказок"
+          "en": "Ten Tales, Two Languages",
+          "ru": "Десять сказок, два языка"
         },
         "description": {
-          "en": "Adding new stories and improving recognition for young readers.",
-          "ru": "Добавление новых сказок и улучшение распознавания для маленьких читателей."
+          "en": "Ten classic tales in Russian and English, each with its own illustrated pages.",
+          "ru": "Десять классических сказок на русском и английском, у каждой свои иллюстрированные страницы."
+        },
+        "completed": true,
+        "state": "completed"
+      },
+      {
+        "title": {
+          "en": "iPhone App",
+          "ru": "Приложение для iPhone"
+        },
+        "description": {
+          "en": "Flutter app with on-device recognition, reading recordings and in-app purchases; preparing for the App Store.",
+          "ru": "Приложение на Flutter с распознаванием на устройстве, записями чтения и покупками; готовится к App Store."
         },
         "completed": false,
         "state": "in-progress"
