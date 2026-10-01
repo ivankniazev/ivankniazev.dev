@@ -286,18 +286,18 @@
         },
         "section3": {
           "title": "3. Free and paid content",
-          "content": "«Kolobok» is free in full. Other tales offer a few preview pages; full access is sold through In-App Purchase as an annual subscription or as a one-time purchase. The price and what it includes are shown in the app before you buy."
+          "content": "Tales are sold in packs of ten through In-App Purchase. One tale in every pack is free in full («Kolobok» in the first pack); the other tales offer a few preview pages. The price of a pack and the tales it contains are shown in the app before you buy."
         },
         "section4": {
-          "title": "4. Subscription",
-          "content": "If you choose the annual subscription:",
-          "list1": "payment is charged to your Apple ID when you confirm the purchase;",
-          "list2": "the subscription renews automatically for another year unless auto-renewal is turned off at least 24 hours before the end of the current period, and the renewal is charged within the 24 hours before that end;",
-          "list3": "you can manage or cancel it in your Apple ID settings (Settings → your name → Subscriptions); cancellation takes effect at the end of the paid period."
+          "title": "4. Purchases",
+          "content": "There are no subscriptions in the app. A pack is a one-time purchase:",
+          "list1": "payment is charged to your Apple ID when you confirm the purchase, and there are no recurring charges;",
+          "list2": "the tales of a purchased pack stay unlocked for good on every device signed in with the same Apple ID;",
+          "list3": "a new pack is a separate purchase; buying one pack does not unlock the others."
         },
         "section5": {
           "title": "5. Refunds and restoring purchases",
-          "content": "Purchases are processed by Apple, so refunds are handled by Apple under its policies (reportaproblem.apple.com); we cannot issue them directly. To get your purchases on a new device signed in with the same Apple ID, use «Restore purchases» in the app."
+          "content": "Purchases are processed by Apple, so refunds are handled by Apple under its policies (reportaproblem.apple.com); we cannot issue them directly. If a purchase is refunded, its pack is locked again. To get your packs on a new device signed in with the same Apple ID, use «Restore purchases» in the app."
         },
         "section6": {
           "title": "6. Content",
