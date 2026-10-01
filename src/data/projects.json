@@ -126,7 +126,12 @@
       "en": "Kids & reading",
       "ru": "Дети и чтение"
     },
-    "featured": false
+    "featured": false,
+    "policies": {
+      "privacy": 10,
+      "terms": 11
+    },
+    "support": "contact@ivankniazev.dev"
   },
   {
     "id": "srpski-korak",

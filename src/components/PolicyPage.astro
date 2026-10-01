@@ -9,6 +9,8 @@ interface Props {
   sections: number;
   /** Route this document lives at — shown in the cover, never changes. */
   path: string;
+  /** Related documents in the aside; the site-wide ones by default. */
+  others?: { path: string; label: string }[];
 }
 
 const { lang, doc, sections, path } = Astro.props;
@@ -16,17 +18,17 @@ const t = useTranslations(lang);
 
 const items = Array.from({ length: sections }, (_, i) => {
   const key = `${doc}.section${i + 1}`;
-  const list = ['list1', 'list2', 'list3']
+  const list = ['list1', 'list2', 'list3', 'list4', 'list5', 'list6']
     .map((l) => t(`${key}.${l}`))
     .filter((v) => v && !v.startsWith(`${key}.`));
   return { id: `s${i + 1}`, title: t(`${key}.title`), content: t(`${key}.content`), list };
 });
 
-const others = [
+const others = (Astro.props.others ?? [
   { path: '/terms', label: t('footer.terms') },
   { path: '/privacy', label: t('footer.privacy') },
   { path: '/refund', label: t('footer.refund') },
-].filter((o) => o.path !== path);
+]).filter((o) => o.path !== path);
 ---
 
 <header class="policy-cover">
@@ -50,10 +52,9 @@ const others = [
       {items.map((s) => (
         <section id={s.id}>
           <h2>{s.title}</h2>
-          <p set:html={s.content.replace(
-            /([\w.+-]+@[\w-]+\.[\w.]+)/,
-            '<a href="mailto:$1">$1</a>'
-          )} />
+          <p set:html={s.content
+            .replace(/(https:\/\/[^\s)]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>')
+            .replace(/([\w.+-]+@[\w-]+\.[\w.]+)/, '<a href="mailto:$1">$1</a>')} />
           {s.list.length > 0 && <ul>{s.list.map((li) => <li>{li}</li>)}</ul>}
         </section>
       ))}

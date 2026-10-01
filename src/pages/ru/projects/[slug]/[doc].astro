@@ -1,0 +1,31 @@
+---
+// Per-app documents (privacy, terms): texts live in i18n under policies.<slug>.<doc>,
+// the project lists them in projects.json as policies: { doc: number of sections }.
+// The site-wide /privacy and /terms stay as they are.
+import Layout from '../../../../layouts/Layout.astro';
+import PolicyPage from '../../../../components/PolicyPage.astro';
+import projectsData from '../../../../data/projects.json';
+import { useTranslations } from '../../../../utils/i18n';
+
+export async function getStaticPaths() {
+  return projectsData.flatMap((project: any) =>
+    Object.entries(project.policies ?? {}).map(([doc, sections]) => ({
+      params: { slug: project.slug, doc },
+      props: { project, doc, sections },
+    }))
+  );
+}
+
+const { project, doc, sections } = Astro.props as any;
+const lang = 'ru';
+const t = useTranslations(lang);
+const base = `/projects/${project.slug}`;
+const others = [
+  { path: base, label: project.title[lang] },
+  ...Object.keys(project.policies).map((d) => ({ path: `${base}/${d}`, label: t(`policies.${project.slug}.${d}.title`) })),
+];
+---
+
+<Layout title={`${t(`policies.${project.slug}.${doc}.title`)} — Иван Князев`} lang={lang} bare={true}>
+  <PolicyPage lang={lang} doc={`policies.${project.slug}.${doc}`} sections={sections} path={`${base}/${doc}`} others={others} />
+</Layout>

@@ -59,7 +59,11 @@
       "download": "Get the extension",
       "updates": "Get updates",
       "back": "All projects",
-      "next": "Next project"
+      "next": "Next project",
+      "documents": "Documents",
+      "support": "Support",
+      "privacyApp": "Privacy Policy",
+      "termsApp": "Terms of Use"
     },
     "filters": {
       "all": "All",
@@ -210,5 +214,116 @@
     "readingTime": "min read",
     "contents": "Contents",
     "back": "All writing"
+  },
+  "policies": {
+    "living-tales": {
+      "privacy": {
+        "title": "Living Tales — Privacy Policy",
+        "lastUpdated": "Last updated: October 1, 2026",
+        "section1": {
+          "title": "1. The short version",
+          "content": "Living Tales (Живые сказки) is an iPhone app by Ivan Kniazev in which a parent reads a fairy tale aloud and the pictures come alive. The app has no accounts, no ads, no analytics and no tracking. Your voice is processed on your device and is never sent to us. We do not collect personal data."
+        },
+        "section2": {
+          "title": "2. Microphone and speech recognition",
+          "content": "When you start reading a tale, the app uses the microphone to follow the text you read aloud. The audio is processed in real time by a speech recognition model built into the app, on your device:",
+          "list1": "Audio is not sent to us or to any third party.",
+          "list2": "Audio is not stored, unless you choose to save a reading recording (section 3).",
+          "list3": "You can deny or revoke microphone access in iOS Settings at any time; the tale can still be read by tapping the underlined words and turning pages by hand."
+        },
+        "section3": {
+          "title": "3. Reading recordings",
+          "content": "The app can record a reading so that the child can listen to it later. This can be switched off in the For Parents section, which is protected by a parental gate. After a tale you are asked whether to keep the recording; if you decline, it is deleted at once.",
+          "list1": "A saved recording consists of the voice audio and the timing of page turns and animations.",
+          "list2": "Recordings are stored only in the app's storage on your device. We never receive them.",
+          "list3": "You can delete a recording in the app at any time; deleting the app deletes all recordings."
+        },
+        "section4": {
+          "title": "4. Purchases",
+          "content": "Paid tales are sold through Apple's In-App Purchase. Apple processes the payment; we do not receive your name, email address or payment details. The app only learns from the App Store on your device whether a purchase is active. Apple's handling of your data is described in Apple's Privacy Policy."
+        },
+        "section5": {
+          "title": "5. Data kept on your device",
+          "content": "The app keeps the following on your device only, and does not transmit it:",
+          "list1": "settings such as the interface language and the recording switch;",
+          "list2": "whether a purchase is active;",
+          "list3": "saved reading recordings."
+        },
+        "section6": {
+          "title": "6. Network connections",
+          "content": "Tales work offline. The app goes online only to talk to the App Store about purchases and, where needed, to download additional content such as a speech recognition model for another language. Like any download, such a request carries technical information (for example, your IP address) that the hosting provider needs to deliver the file. We do not use it to identify you and do not combine it with any other data."
+        },
+        "section7": {
+          "title": "7. Children",
+          "content": "The app is made for parents and other adults to read with children. We do not knowingly collect personal information from anyone, including children under 13 (COPPA) or under 16 (GDPR). Purchases, settings and anything that leads outside the app are behind a parental gate."
+        },
+        "section8": {
+          "title": "8. Your rights",
+          "content": "Because we do not collect or store personal data on our side, there is nothing for us to access, correct or delete: everything the app keeps is on your device and under your control. You can still write to us with any question or request."
+        },
+        "section9": {
+          "title": "9. Changes to this policy",
+          "content": "If the app's handling of data changes, we will update this page and the date at the top before the change reaches the app."
+        },
+        "section10": {
+          "title": "10. Contact",
+          "content": "Questions about privacy in Living Tales: contact@ivankniazev.dev."
+        }
+      },
+      "terms": {
+        "title": "Living Tales — Terms of Use",
+        "lastUpdated": "Last updated: October 1, 2026",
+        "section1": {
+          "title": "1. Agreement",
+          "content": "These Terms of Use apply to the Living Tales (Живые сказки) app by Ivan Kniazev. By downloading or using the app you agree to them. Apple's Licensed Application End User License Agreement (https://www.apple.com/legal/internet-services/itunes/dev/stdeula/) also applies; these terms add to it and do not replace it."
+        },
+        "section2": {
+          "title": "2. Licence",
+          "content": "You may use the app for personal, non-commercial purposes on Apple devices you own or control, as permitted by the App Store Usage Rules. You may not:",
+          "list1": "copy, redistribute or sell the tales, illustrations, music or other content of the app;",
+          "list2": "reverse engineer the app or extract its content, except where the law expressly allows it;",
+          "list3": "use the app in a way that breaks the law or the rights of others."
+        },
+        "section3": {
+          "title": "3. Free and paid content",
+          "content": "«Kolobok» is free in full. Other tales offer a few preview pages; full access is sold through In-App Purchase as an annual subscription or as a one-time purchase. The price and what it includes are shown in the app before you buy."
+        },
+        "section4": {
+          "title": "4. Subscription",
+          "content": "If you choose the annual subscription:",
+          "list1": "payment is charged to your Apple ID when you confirm the purchase;",
+          "list2": "the subscription renews automatically for another year unless auto-renewal is turned off at least 24 hours before the end of the current period, and the renewal is charged within the 24 hours before that end;",
+          "list3": "you can manage or cancel it in your Apple ID settings (Settings → your name → Subscriptions); cancellation takes effect at the end of the paid period."
+        },
+        "section5": {
+          "title": "5. Refunds and restoring purchases",
+          "content": "Purchases are processed by Apple, so refunds are handled by Apple under its policies (reportaproblem.apple.com); we cannot issue them directly. To get your purchases on a new device signed in with the same Apple ID, use «Restore purchases» in the app."
+        },
+        "section6": {
+          "title": "6. Content",
+          "content": "The tales are retellings of traditional folk and fairy tales. The illustrations were created with the help of AI tools and then selected and edited; the music and sounds are generated for the app. We may add, update or change tales and features."
+        },
+        "section7": {
+          "title": "7. Speech recognition",
+          "content": "Speech recognition runs on your device. Its accuracy depends on the room, the distance to the device and the way a person reads, so the app may miss or mistake words; you can always tap the underlined words or turn pages by hand. The app is a reading companion, not a tool for assessing reading skills."
+        },
+        "section8": {
+          "title": "8. Use with children",
+          "content": "The app is designed for an adult reading together with a child. The adult is responsible for supervising the child and for any purchases made on the device."
+        },
+        "section9": {
+          "title": "9. Disclaimer and liability",
+          "content": "The app is provided «as is». To the extent permitted by law, we give no warranties beyond those that cannot be excluded, and we are not liable for indirect or consequential damages arising from the use of the app or inability to use it."
+        },
+        "section10": {
+          "title": "10. Changes",
+          "content": "We may update these terms; the current version is always on this page, with the date at the top. Continued use of the app after a change means you accept the updated terms."
+        },
+        "section11": {
+          "title": "11. Contact",
+          "content": "Questions about these terms: contact@ivankniazev.dev."
+        }
+      }
+    }
   }
 }

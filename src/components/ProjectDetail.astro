@@ -140,6 +140,27 @@ const site = links.website || links.download || links.github;
     </section>
   </div>
 
+  {(project.policies || project.support) && (
+    <section class="section shell">
+      <div class="section__head section__head--strong">
+        <h2 class="head">{t('projects.labels.documents')}</h2>
+        <span class="rule" aria-hidden="true"></span>
+      </div>
+      <ul class="tags">
+        {Object.keys(project.policies ?? {}).map((doc) => (
+          <li class="tag">
+            <a href={getLocalizedPath(`/projects/${project.slug}/${doc}`, lang)}>{t(`projects.labels.${doc}App`)}</a>
+          </li>
+        ))}
+        {project.support && (
+          <li class="tag">
+            <a href={`mailto:${project.support}`}>{t('projects.labels.support')}: {project.support}</a>
+          </li>
+        )}
+      </ul>
+    </section>
+  )}
+
   <section class="onward shell" aria-label={t('projects.onward')}>
     <div class="onward__head">
       <span class="meta">{t('projects.onward')}</span>
