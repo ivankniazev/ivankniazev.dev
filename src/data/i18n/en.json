@@ -218,11 +218,11 @@
   "policies": {
     "living-tales": {
       "privacy": {
-        "title": "Living Tales — Privacy Policy",
+        "title": "Storytime Fairy Tales — Privacy Policy",
         "lastUpdated": "Last updated: October 5, 2026",
         "section1": {
           "title": "1. The short version",
-          "content": "Living Tales (Живые сказки) is an iPhone app by Ivan Kniazev in which a parent reads a fairy tale aloud and the pictures come alive. The app has no accounts, no ads, no analytics and no tracking. Your voice is processed on your device and is never sent to us. We do not collect personal data."
+          "content": "Storytime Fairy Tales (published in Russian and Spanish under localized titles) is an iPhone app by Ivan Kniazev in which a parent reads a fairy tale aloud and the pictures come alive. The app has no accounts, no ads, no analytics and no tracking. Your voice is processed on your device and is never sent to us. We do not collect personal data."
         },
         "section2": {
           "title": "2. Microphone and speech recognition",
@@ -267,15 +267,15 @@
         },
         "section10": {
           "title": "10. Contact",
-          "content": "Questions about privacy in Living Tales: contact@ivankniazev.dev."
+          "content": "Questions about privacy in Storytime Fairy Tales: contact@ivankniazev.dev."
         }
       },
       "terms": {
-        "title": "Living Tales — Terms of Use",
+        "title": "Storytime Fairy Tales — Terms of Use",
         "lastUpdated": "Last updated: October 5, 2026",
         "section1": {
           "title": "1. Agreement",
-          "content": "These Terms of Use apply to the Living Tales (Живые сказки) app by Ivan Kniazev. By downloading or using the app you agree to them. Apple's Licensed Application End User License Agreement (https://www.apple.com/legal/internet-services/itunes/dev/stdeula/) also applies; these terms add to it and do not replace it."
+          "content": "These Terms of Use apply to the Storytime Fairy Tales app (published in Russian and Spanish under localized titles) by Ivan Kniazev. By downloading or using the app you agree to them. Apple's Licensed Application End User License Agreement (https://www.apple.com/legal/internet-services/itunes/dev/stdeula/) also applies; these terms add to it and do not replace it."
         },
         "section2": {
           "title": "2. Licence",
