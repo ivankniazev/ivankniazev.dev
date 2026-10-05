@@ -219,14 +219,14 @@
     "living-tales": {
       "privacy": {
         "title": "Living Tales — Privacy Policy",
-        "lastUpdated": "Last updated: October 1, 2026",
+        "lastUpdated": "Last updated: October 5, 2026",
         "section1": {
           "title": "1. The short version",
           "content": "Living Tales (Живые сказки) is an iPhone app by Ivan Kniazev in which a parent reads a fairy tale aloud and the pictures come alive. The app has no accounts, no ads, no analytics and no tracking. Your voice is processed on your device and is never sent to us. We do not collect personal data."
         },
         "section2": {
           "title": "2. Microphone and speech recognition",
-          "content": "When you start reading a tale, the app uses the microphone to follow the text you read aloud. The audio is processed in real time by a speech recognition model built into the app, on your device:",
+          "content": "When you start reading a tale, the app uses the microphone to follow the text you read aloud. The audio is processed in real time, on your device, by a speech recognition model for your reading language (the model is downloaded once from Apple's App Store servers, see section 6):",
           "list1": "Audio is not sent to us or to any third party.",
           "list2": "Audio is not stored, unless you choose to save a reading recording (section 3).",
           "list3": "You can deny or revoke microphone access in iOS Settings at any time; the tale can still be read by tapping the underlined words and turning pages by hand."
@@ -251,7 +251,7 @@
         },
         "section6": {
           "title": "6. Network connections",
-          "content": "Tales work offline. The app goes online only to talk to the App Store about purchases and, where needed, to download additional content such as a speech recognition model for another language. Like any download, such a request carries technical information (for example, your IP address) that the hosting provider needs to deliver the file. We do not use it to identify you and do not combine it with any other data."
+          "content": "Once the speech recognition model for your language is on the device, tales work offline. The app goes online only to talk to the App Store about purchases and to download the speech recognition model for the language you read in. Models are hosted by Apple on the App Store's servers and delivered by iOS. Like any download, such a request carries technical information (for example, your IP address) that Apple needs to deliver the file; Apple handles it under its own Privacy Policy. We do not receive it."
         },
         "section7": {
           "title": "7. Children",
@@ -272,7 +272,7 @@
       },
       "terms": {
         "title": "Living Tales — Terms of Use",
-        "lastUpdated": "Last updated: October 1, 2026",
+        "lastUpdated": "Last updated: October 5, 2026",
         "section1": {
           "title": "1. Agreement",
           "content": "These Terms of Use apply to the Living Tales (Живые сказки) app by Ivan Kniazev. By downloading or using the app you agree to them. Apple's Licensed Application End User License Agreement (https://www.apple.com/legal/internet-services/itunes/dev/stdeula/) also applies; these terms add to it and do not replace it."
